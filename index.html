@@ -68,6 +68,28 @@
         .pulse-highlight {
             animation: pulseHighlight 0.75s ease-in-out 2;
         }
+
+        .form-select-wrap {
+            position: relative;
+        }
+
+        .form-select-wrap::after {
+            color: #80747d;
+            content: "expand_more";
+            font-family: "Material Symbols Outlined";
+            font-size: 20px;
+            pointer-events: none;
+            position: absolute;
+            right: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .form-select-wrap select {
+            appearance: none;
+            padding-right: 2.75rem;
+            width: 100%;
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script
@@ -76,34 +98,7 @@
 
 <body class="bg-surface font-body-md text-on-surface">
     <header class="fixed top-0 w-full z-50 shadow-[0_1px_12px_rgba(59,20,63,0.08)] bg-surface">
-        <!-- Top Announcement & Global Desk Bar -->
-        <!-- <div class="w-full bg-primary text-on-primary py-1.5 border-b border-primary-container/40">
-            <div
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between font-label-md text-xs sm:text-label-md">
-                <div class="flex items-center gap-3 sm:gap-space-lg">
-
-                </div>
-                <div class="flex items-center gap-2 sm:gap-space-md">
-                    <div class="flex items-center gap-1.5 sm:gap-space-xs">
-                        <span
-                            class="material-symbols-outlined text-[15px] sm:text-[16px] text-secondary-container">support_agent</span>
-                        <span class="text-surface-dim font-normal hidden sm:inline">24/7 Global Concierge:</span>
-                        <a class="font-label-md text-on-primary hover:text-secondary-fixed-dim transition-colors tracking-wide font-semibold"
-                            href="tel:+918800028648">+91 88000 28648</a>
-                    </div>
-                    <div class="hidden lg:flex items-center gap-space-xs">
-                        <span class="inline-block w-2 h-2 rounded-full bg-[#25D366] animate-pulse"></span>
-                        <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                        </svg>
-                        <span class="text-surface-dim font-normal">Direct WhatsApp Response Time: &lt; 5 mins</span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
+     
         <!-- Main Navigation Bar -->
         <div class="h-16 sm:h-20 bg-surface/95 backdrop-blur-xl border-b border-surface-variant/30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-3">
@@ -163,14 +158,7 @@
         <div id="mobile-menu"
             class="hidden xl:hidden w-full bg-surface/98 backdrop-blur-2xl border-b border-surface-variant shadow-2xl transition-all duration-300 max-h-[calc(100vh-6rem)] overflow-y-auto">
             <div class="max-w-7xl mx-auto px-4 py-4 space-y-2">
-                <!-- <a class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-label-md text-primary hover:bg-surface-container-high transition-colors"
-                    href="#doctors">
-                    <span class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary">stethoscope</span>
-                        <span class="font-bold">Doctors</span>
-                    </span>
-                    <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
-                </a> -->
+               
                 <a class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-label-md text-primary hover:bg-surface-container-high transition-colors"
                     href="#hospitals">
                     <span class="flex items-center gap-3">
@@ -187,16 +175,7 @@
                     </span>
                     <span class="material-symbols-outlined text-[18px] text-outline">arrow_forward</span>
                 </a>
-                <!-- <a class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-label-md text-primary hover:bg-surface-container-high transition-colors"
-                    href="#cost-estimator">
-                    <span class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary">payments</span>
-                        <span class="font-bold">Cost Estimator</span>
-                    </span>
-                    <span
-                        class="text-[11px] font-bold bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full">Save
-                        70%</span>
-                </a> -->
+                
                 <a class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-xl font-label-md text-primary hover:bg-surface-container-high transition-colors"
                     href="#patient-stories">
                     <span class="flex items-center gap-3">
@@ -245,44 +224,21 @@
                     class="pointer-events-none absolute top-20 right-10 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl">
                 </div>
                 <div class="w-[92%] sm:w-[90%] max-w-7xl mx-auto pt-space-lg lg:pt-space-xl">
-                    <!-- Breadcrumb & Authority Ribbon -->
-                    <div
-                        class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-space-sm mb-space-md sm:mb-space-lg">
-                        <div
-                            class="inline-flex flex-wrap items-center gap-1.5 sm:gap-space-xs bg-surface-container-high px-3 sm:px-space-md py-1.5 rounded-2xl sm:rounded-full text-xs sm:text-label-md">
-                            <div class="flex items-center gap-1.5 shrink-0">
-                                <span
-                                    class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-                                <span class="font-bold text-primary">Your journey to better healthcare starts here.</span>
-                            </div>
-                            <!-- <span class="text-outline text-body-sm hidden xs:inline">•</span>
-                            <span class="text-on-surface-variant font-medium">JCI &amp; NABH Accredited Hospital
-                                Network</span> -->
-                        </div>
-                        <div
-                            class="flex items-center gap-1.5 sm:gap-space-sm text-xs sm:text-body-sm text-on-surface-variant pl-1 sm:pl-0">
-                            <span
-                                class="material-symbols-outlined text-[16px] sm:text-[18px] text-secondary shrink-0">verified_user</span>
-                            <span>Zero Patient Commission • Official Hospital Rates</span>
-                        </div>
-                    </div>
+                   
                     <!-- Hero Grid: image-led desktop layout, consultation-first on phones -->
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-stretch">
-                        <div class="hidden sm:flex lg:col-span-7 relative min-h-[420px] lg:min-h-[600px] overflow-hidden rounded-xl bg-primary">
+                        <div class="hidden sm:flex lg:col-span-7 relative h-full min-h-[420px] lg:min-h-0 overflow-hidden rounded-xl bg-primary">
                             <img class="absolute inset-0 h-full w-full object-cover"
-                                src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"
-                                alt="A clinician speaking with a patient in a modern medical consultation room" />
+                                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"
+                                alt="Doctor consulting an international patient about healthcare in India" />
                             <div class="absolute inset-0 bg-gradient-to-t from-[#1c1020]/90 via-[#1c1020]/30 to-transparent"></div>
                             <div class="relative z-10 mt-auto max-w-2xl p-6 sm:p-8 lg:p-10">
-                                <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 font-label-md text-label-md text-white backdrop-blur-sm">
-                                    <span class="h-2 w-2 rounded-full bg-[#ff9a57]"></span>
-                                    Aesthetic &amp; Reconstructive Excellence
-                                </span>
+                               
                                 <h1 class="mt-5 font-headline-xl text-headline-lg md:text-headline-xl text-white font-extrabold leading-tight">
-                                    World-Class Cosmetic &amp; Plastic Surgery with <span class="text-white">India<span class="text-[#ff9a57]">MD</span></span>
+                                   Your journey to better healthcare starts in India 
                                 </h1>
                                 <p class="mt-4 max-w-xl font-body-lg text-body-md md:text-body-lg text-white/90 leading-relaxed">
-                                    Access leading board-certified plastic surgeons across South Korea &amp; India, with 3D virtual planning and dedicated concierge care.
+                                  Access leading hospitals, experienced doctors, advanced treatments, and personalised medical care across India — all coordinated through IndiaMD.
                                 </p>
                             </div>
                         </div>
@@ -296,11 +252,10 @@
                                 </div>
                                 <div class="flex items-start justify-between mb-space-md">
                                     <div>
-                                        <span
+                                        <!-- <span
                                             class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Fast-Track
-                                            Triage</span>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Get Free
-                                            Opinion &amp; Cost Estimate</h3>
+                                            Triage</span> -->
+                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary">Get Free Doctor Opinion &amp; Cost Estimate</h3>
                                     </div>
                                     <div
                                         class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
@@ -319,6 +274,50 @@
                                             class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all"
                                             name="name" placeholder="e.g. Priya Sharma" autocomplete="name" required type="text" />
                                     </div>
+                                    <div>
+                                        <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-country">Country</label>
+                                        <div class="form-select-wrap">
+                                            <select id="patient-country" name="country" aria-label="Select country"
+                                                class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer" required>
+                                                <option value="India" selected>India</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div id="patient-city-field">
+                                        <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-city">City</label>
+                                        <div class="form-select-wrap">
+                                            <select id="patient-city" name="city" aria-label="Select city"
+                                                class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer" required>
+                                                <option value="New Delhi">New Delhi</option>
+                                                <option value="Mumbai">Mumbai</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Bengaluru">Bengaluru</option>
+                                                <option value="Kolkata">Kolkata</option>
+                                                <option value="Ahmedabad">Ahmedabad</option>
+                                                <option value="Pune">Pune</option>
+                                                <option value="Jaipur">Jaipur</option>
+                                                <option value="Lucknow">Lucknow</option>
+                                                <option value="Chandigarh">Chandigarh</option>
+                                                <option value="Kochi">Kochi</option>
+                                                <option value="Coimbatore">Coimbatore</option>
+                                                <option value="Indore">Indore</option>
+                                                <option value="Bhopal">Bhopal</option>
+                                                <option value="Nagpur">Nagpur</option>
+                                                <option value="Surat">Surat</option>
+                                                <option value="Vadodara">Vadodara</option>
+                                                <option value="Visakhapatnam">Visakhapatnam</option>
+                                                <option value="Bhubaneswar">Bhubaneswar</option>
+                                                <option value="Patna">Patna</option>
+                                                <option value="Ranchi">Ranchi</option>
+                                                <option value="Guwahati">Guwahati</option>
+                                                <option value="Dehradun">Dehradun</option>
+                                                <option value="Srinagar">Srinagar</option>
+                                                <option value="Amritsar">Amritsar</option>
+                                                <option value="Goa">Goa</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-1 gap-space-sm">
                                         <div>
                                             <label class="block font-label-md text-label-md text-on-surface mb-1">Email
@@ -330,15 +329,14 @@
                                         <div>
                                             <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-phone">WhatsApp / Phone</label>
                                             <div class="flex gap-2">
-                                                <select name="country_code" aria-label="Country calling code" class="w-[112px] shrink-0 px-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm outline-none focus:bg-surface-container-high" required>
+                                                <select id="country-code-display" aria-label="Country calling code" class="w-[112px] shrink-0 px-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm outline-none" tabindex="-1" disabled>
                                                     <option value="+91" selected>IN +91</option>
-                                                    <option value="+1">US/CA +1</option>
-                                                    <option value="+44">UK +44</option>
+                                                    <option value="+90">TR +90</option>
+                                                    <option value="+66">TH +66</option>
+                                                    <option value="+49">DE +49</option>
                                                     <option value="+971">UAE +971</option>
-                                                    <option value="+966">Saudi +966</option>
-                                                    <option value="+61">Australia +61</option>
-                                                    <option value="+65">Singapore +65</option>
                                                 </select>
+                                                <input type="hidden" id="country-code-value" name="country_code" value="+91" />
                                                 <input id="patient-phone" class="min-w-0 w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all" name="phone" placeholder="98765 43210" autocomplete="tel-national" inputmode="tel" pattern="[0-9\(\)+.\-\s]{7,20}" title="Enter a valid phone number" required type="tel" />
                                             </div>
                                         </div>
@@ -346,54 +344,30 @@
                                     <div class="grid grid-cols-1 sm:grid-cols-1 gap-space-sm">
                                         <div>
                                             <label
-                                                class="block font-label-md text-label-md text-on-surface mb-1">Procedure</label>
+                                                class="block font-label-md text-label-md text-on-surface mb-1">Department </label>
                                             <select aria-label="Select Treatment"
-                                                name="procedure" class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer">
-                                                <option value="rhinoplasty">Rhinoplasty (Nose Surgery)</option>
-                                                <option value="facelift">Facelift &amp; Neck Lift</option>
-                                                <option value="vline">V-Line / Jaw Contouring</option>
-                                                <option value="eyelid">Eyelid Surgery (Blepharoplasty)</option>
-                                                <option value="breast">Breast Augmentation</option>
-                                                <option value="hair">Hair Transplant</option>
-                                                <option value="liposuction">Liposuction &amp; 360 Body Sculpt</option>
+                                                name="department" class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer">
+                                                <option value="oncology">Oncology</option>
+                                                <option value="orthopedics">Orthopedics</option>
+                                                <option value="neurology-neurosurgery">Neurology and Neurosurgery</option>
+                                                <option value="transplant-surgery">Transplant Surgery</option>
+                                                <option value="cardiology-cardiac-surgery">Cardiology and Cardiac Surgery</option>
+                                                <option value="spine-surgery">Spine Surgery</option>
+                                                <option value="ent-surgery">ENT Surgery</option>
+                                                <option value="gynecology">Gynecology</option>
+                                                <option value="general-surgery">General Surgery</option>
+                                                <option value="cosmetic-plastic-surgery">Cosmetic and Plastic Surgery</option>
+                                                <option value="nephrology">Nephrology</option>
+                                                <option value="gastroenterology">Gastroenterology</option>
                                             </select>
                                         </div>
-                                        <div>
-                                            <label
-                                                class="block font-label-md text-label-md text-on-surface mb-1">Preferred
-                                                Destination</label>
-                                            <select aria-label="Select Destination"
-                                                name="destination" class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer">
-                                                <option value="korea">South Korea (Seoul / Incheon)</option>
-                                                <option value="india">India (Delhi NCR, Mumbai, Chennai)</option>
-                                                <option value="turkey">Turkey (Istanbul)</option>
-                                                <option value="uae">United Arab Emirates (Dubai)</option>
-                                            </select>
-                                        </div>
+                                      
                                     </div>
-                                    <!-- File Upload Drop Box -->
-                                    <!-- <div>
-                                        <label class="block font-label-md text-label-md text-on-surface mb-1">Optional
-                                            Photos / Diagnostic Scans</label>
-                                        <div
-                                            class="bg-surface-container-low rounded-lg p-space-sm text-center cursor-pointer hover:bg-surface-container transition-colors">
-                                            <div
-                                                class="flex items-center justify-center gap-space-xs text-secondary mb-0.5">
-                                                <span class="material-symbols-outlined text-[20px]">cloud_upload</span>
-                                                <span class="font-label-md text-label-md font-bold">Attach Scans or
-                                                    Reference Photos</span>
-                                            </div>
-                                            <span
-                                                class="text-body-sm font-body-sm text-on-surface-variant block">Encrypted
-                                                &amp; HIPAA-Compliant • Max 25MB</span>
-                                        </div>
-                                    </div> -->
+                                   
                                     <button id="quote-submit-button"
                                         class="w-full py-3 sm:py-3.5 px-3 sm:px-space-md rounded-full bg-secondary-container text-on-secondary font-label-lg text-[13.5px] sm:text-label-lg font-bold flex items-center justify-center gap-2 shadow-md hover:bg-secondary transition-all group cursor-pointer"
                                         type="submit">
-                                        <span class="hidden sm:inline">Get Free Doctor Opinion &amp; Cost
-                                            Estimate</span>
-                                        <span class="sm:hidden">Get Free Opinion &amp; Estimate</span>
+                                        <span>Submit</span>
                                         <span
                                             class="material-symbols-outlined text-[18px] sm:text-[20px] shrink-0 transition-transform group-hover:translate-x-1">arrow_forward</span>
                                     </button>
@@ -421,16 +395,13 @@
             <section class="w-full bg-surface-container-low pt-space-lg sm:pt-space-xl" aria-label="IndiaMD service metrics and patient support">
                 <div class="w-[92%] sm:w-[90%] max-w-7xl mx-auto">
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm mb-space-lg">
-                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-primary">31+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Super-Specialty Centers</div></div>
-                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-primary">2,500+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Surgical &amp; ICU Beds</div></div>
-                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="flex items-center gap-1 font-headline-md text-headline-md font-bold text-primary"><span>4.8</span><span class="material-symbols-outlined text-[18px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">1,200+ Reviews</div></div>
-                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-secondary">0%</div><div class="font-body-sm text-body-sm text-on-surface-variant">Service Markups</div></div>
+                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-primary">1000+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Certified Doctors</div></div>
+                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-primary">5000+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Happy Patients</div></div>
+                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-primary">1000+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Patient Reviews</div></div>
+                        <!-- <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="flex items-center gap-1 font-headline-md text-headline-md font-bold text-primary"><span>4.8</span><span class="material-symbols-outlined text-[18px] text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">1,200+ Reviews</div></div> -->
+                        <div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm"><div class="font-headline-md text-headline-md font-bold text-secondary">150+</div><div class="font-body-sm text-body-sm text-on-surface-variant">Top Hospitals</div></div>
                     </div>
-                    <!-- <div class="flex flex-wrap items-center sm:justify-center gap-x-space-lg gap-y-space-sm text-on-surface-variant font-label-md text-label-md">
-                        <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[20px] text-secondary">timer</span><span>4-Hour Diagnostic Response</span></div>
-                        <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[20px] text-secondary">translate</span><span>Dedicated English/Arabic Interpreters</span></div>
-                        <div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[20px] text-secondary">badge</span><span>Board Certified Specialists</span></div>
-                    </div> -->
+                   
                 </div>
             </section>
             <!-- Interactive Assistance Need Tiles -->
@@ -441,12 +412,10 @@
                             <span
                                 class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">How
                                 We Help You</span>
-                            <h2 class="font-headline-lg text-headline-md sm:text-headline-lg font-bold text-primary">Describe Your Immediate
-                                Requirement</h2>
+                            <h2 class="font-headline-lg text-headline-md sm:text-headline-lg font-bold text-primary">Your Treatment Journey, Simplified</h2>
                         </div>
                         <p class="font-body-md text-body-md text-on-surface-variant max-w-md mt-2 md:mt-0">
-                            Tailored pathways for international patients seeking seamless clinical logistics, price
-                            clarity, and direct physician contact.
+                            Personalized support for international patients seeking trusted doctors, transparent costs, and seamless medical care in India.
                         </p>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
@@ -462,11 +431,11 @@
                                 <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Find
                                     Right Doctor</h3>
                                 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Match with
-                                    super-specialists based on your surgical complexity and anatomical goals.</p>
+                                    Connect with experienced specialists based on your condition, treatment needs, and medical history</p>
                             </div>
                             <div
                                 class="mt-space-md flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold">
-                                <span>Match Surgeon</span>
+                                <span>Find a Specialist</span>
                                 <span
                                     class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -480,14 +449,12 @@
                                     class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center mb-space-md group-hover:bg-secondary-container transition-colors">
                                     <span class="material-symbols-outlined text-[26px]">request_quote</span>
                                 </div>
-                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Cost
-                                    Estimates</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Transparent
-                                    bundled surgical package quotes with zero hidden hospital costs.</p>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Get Treatment Estimates</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Receive transparent treatment estimates from leading hospitals with clear cost details</p>
                             </div>
                             <div
                                 class="mt-space-md flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold">
-                                <span>Get Quote</span>
+                                <span>Get Cost Estimate</span>
                                 <span
                                     class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -501,15 +468,12 @@
                                     class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center mb-space-md group-hover:bg-secondary-container transition-colors">
                                     <span class="material-symbols-outlined text-[26px]">flight_takeoff</span>
                                 </div>
-                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Visa
-                                    Invitation</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Official
-                                    hospital invitation letters delivered within 24 hours for rapid embassy visa
-                                    processing.</p>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Visa & Medical Invitation</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Get assistance with medical visa documentation and hospital invitation letters for your treatment journey.</p>
                             </div>
                             <div
                                 class="mt-space-md flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold">
-                                <span>Expedite Visa</span>
+                                <span>Get Visa Assistance</span>
                                 <span
                                     class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -523,14 +487,13 @@
                                     class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center mb-space-md group-hover:bg-secondary-container transition-colors">
                                     <span class="material-symbols-outlined text-[26px]">hotel</span>
                                 </div>
-                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Airport
-                                    &amp; Stay</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">VIP airport
-                                    transfer, hotel booking near hospital, local data SIM, and 24/7 dedicated guide.</p>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Travel &amp; Stay Support 
+                                   </h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Assistance with airport transfers, accommodation, local SIM, and essential travel arrangements.</p>
                             </div>
                             <div
                                 class="mt-space-md flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold">
-                                <span>Explore Stay</span>
+                                <span>Plan Your Stay</span>
                                 <span
                                     class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -548,19 +511,13 @@
                                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                     </svg>
                                 </div>
-                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Case
-                                    Specialist</h3>
-                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Direct
-                                    WhatsApp / phone dialogue with licensed medical coordinators to review records.</p>
+                                <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Dedicated Case Specialist</h3>
+                                <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Get a dedicated medical coordinator to assist with appointments, records, communication, and your overall journey.</p>
                             </div>
                             <div
                                 class="mt-space-md flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold group-hover:text-[#25D366] transition-colors">
-                                <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                                </svg>
-                                <span>Chat on WhatsApp</span>
+                              
+                                <span>Talk to a Specialist</span>
                                 <span
                                     class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
                             </div>
@@ -568,426 +525,16 @@
                     </div>
                 </div>
             </section>
-            <!-- Featured Board-Certified Surgeons -->
-            <!-- <section id="doctors" class="py-space-xl bg-surface">
-                <div class="max-w-7xl mx-auto px-margin">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg">
-                        <div>
-                            <span
-                                class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Preeminent
-                                Clinical Faculty</span>
-                            <h2 class="font-headline-lg text-headline-lg font-bold text-primary">Featured
-                                Board-Certified Surgeons</h2>
-                        </div>
-               
-                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="doctor-filters">
-                            <button
-                                class="filter-btn px-space-md py-1.5 rounded-full font-label-md text-label-md font-bold bg-primary text-on-primary transition-all"
-                                onclick="filterSurgeons('all', this)" type="button">All Specialists</button>
-                            <button
-                                class="filter-btn px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-container transition-all"
-                                onclick="filterSurgeons('facial', this)" type="button">Facial &amp; V-Line</button>
-                            <button
-                                class="filter-btn px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-container transition-all"
-                                onclick="filterSurgeons('rhinoplasty', this)" type="button">Rhinoplasty</button>
-                            <button
-                                class="filter-btn px-space-md py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant bg-surface-container-low hover:bg-surface-container transition-all"
-                                onclick="filterSurgeons('reconstructive', this)" type="button">Micro &amp; Body</button>
-                        </div>
-                    </div>
-       
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="surgeons-grid">
-                        <!-- Doctor 1: Prof Gun Hwang 
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="facial reconstructive">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Distinguished Asian male cosmetic surgeon with silver hair in pristine clinical coat, softly lit university hospital setting, warm plum backdrop with professional medical aura."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaYpmkq-MSFZdEjYUZK_YU5O3Qx9dFJciCAcWK7L-v1CXOKxO14bW14n51L3-PF9PKkjOcayIZzA0L7WILmR51LPFJBbGqVEUuFOXZnqev4y_ikdl1CnKEWQKQ-b5Oy25I4mkmU7SNhCwuvow9PhDfIzfzx0UiUnkrZvIUtMZOFWXiRm9dqjqmaNHmjus2xz8WEkb6sUgTuwX9eKsUY3wSsujKHDgFgu1yr0qtkTa_WYb8GZVziw" />
-                                        <span
-                                            class="absolute bottom-1 right-1 bg-secondary-container text-on-secondary text-[10px] font-bold px-1.5 py-0.5 rounded-full">Top
-                                            Faculty</span>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(180+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Gun Hwang</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">Cosmetic &amp;
-                                            Plastic Surgeon</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Inha University Hospital</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>36 Years International Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Pioneer in craniofacial reconstruction, complex structural rhinoplasty, and
-                                        microvascular tissue transfer.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Gun%20Hwang"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Gun%20Hwang"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-                
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="facial">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Senior Korean chief plastic surgeon in formal medical attire, warm cinematic rim lighting, modern university surgical center setting, highly authoritative demeanor."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMpsSXB-qSvHGlbbrAdwZvcLTULlK1ltLsKctbWHPW1t21hza5RmNKPnk0ZM0zdqG4IJL5KqcFqUwW0-BC2819J9w7NqnvD8iq3apm_5E8KkG_xQ58pX_R2B45soR4DVzTcZQLuYFcb_RknsoT5TcSsxwmeU_QUyxxO-HSn2Ep4tuSpXlz35rk281x-C7RzuuMxntgxzjjJFZbrSsa3wyd6tJptzs9nJqbGfrDdg1HcSn3DXLqhQ" />
-                                        <span
-                                            class="absolute bottom-1 right-1 bg-secondary-container text-on-secondary text-[10px] font-bold px-1.5 py-0.5 rounded-full">Seoul
-                                            Chief</span>
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(220+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Kim Woo Seob</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">Facial
-                                            Aesthetics Specialist</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Chung-Ang Univ Hospital, Seoul</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>38 Years Clinical Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Celebrated for deep-plane facelift procedures, SMAS lifting, and advanced
-                                        anti-aging rejuvenation protocols.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Kim%20Woo%20Seob"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Kim%20Woo%20Seob"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-                       
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="reconstructive">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Confident Asian male plastic surgeon in surgical scrubs and stethoscope, clean medical facility background, gentle smile, modern healthcare aesthetic."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNUBrA4et0nbvAJyg_WbBUMAly5dn66zpUh6mZSHvrHAr5if-0OXtdx4OZAl3Ay3uUgtIk0IDWN7KiqIp1nrRGdFJL3h2OwgBfFOwsJCc3i2LgAqZ3CoO0qqR_buwHac0PDE1XtA_ZNRYQXDE4ESS4n7h58CCFknzy-RanwVPdTvCBdImbJpeil_HsruMCHHvF0ncBFjLaSNPn4rdEIfLN8ifNyuW5pZr9ONlOIvyCU8M9QY8HFg" />
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(145+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Daegu Son</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">Micro-Cosmetic
-                                            &amp; Sculpting</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Keimyung Univ Dongsan Medical Ctr</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>24 Years Clinical Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Specialized in precision body sculpting, high-definition liposuction, and
-                                        reconstructive tissue harmonization.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Daegu%20Son"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Daegu%20Son"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-                       
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="rhinoplasty facial">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Portrait of an experienced Asian surgeon wearing medical attire with glasses, elegant studio clinical lighting, soft purple-tinted depth."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiBSjxNb4Q-DPL5S5BRomT_X6xz4BCu2DlVY7obryeba728zKnO_xZFM86IZAJe2Ot7gHdDcsHbIzIKMr1gNnzAolkSi2keRh0Ot4LgmH7aZmom5NGorViHtOp7zOeo2RQ3cm5Bm-VNjYQgSUgBb2J0drnbbtpsdt-Zto0tRXtxXrDGhx3PkwBOAAuMBG08jYt2QIg5KMDCPzKVvLyJN6izrHrp9RaKyFgaiNBit2JQBTocqPW7w" />
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.9</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(160+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Yoo Young Cheon</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">Rhinoplasty
-                                            &amp; Facial Harmony</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Kyung Hee Univ Hospital, Seoul</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>29 Years Clinical Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Internationally renowned for 3D simulation rhinoplasty, septal correction, and
-                                        secondary corrective nasal architecture.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Yoo%20Young%20Cheon"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Yoo%20Young%20Cheon"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-             
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="facial">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Portrait of South Korean plastic surgeon in modern hospital consult room with digital anatomical 3D scans in blurred background, clean clinical attire."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcno4ECE8Er9IvYyaKHzZQfsZwaUIkUveFYD3wvdPAjKns71Cb3DhiOBU4DTrnVGlWbguhxb6ovJ6l1LeU1fNy0rwtHgSHLGNdG4CHgDsAcRAwI0mVULgHyfx4WxqC67p_sQz_3bB1ZOdDxPlUXrjsjmoDuiVIa8w4Q26Q6P15VQ_kQ85lWNRZflzu5wGgQc78T8eP3P_quQjGlqqnqqKrrFV-EOsCvu4S0jWA1QtanvY9nJp54w" />
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(190+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Bae Tae Hui</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">V-Line &amp;
-                                            Jaw Contouring</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Chung-Ang Univ Hospital, Seoul</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>22 Years Clinical Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Mandibular angle ostectomy specialist, chin genioplasty, and low-swelling
-                                        ultrasonic bone contouring.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Bae%20Tae%20Hui"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Bae%20Tae%20Hui"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-               
-                        <div class="surgeon-card group bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-xl transition-all flex flex-col justify-between"
-                            data-category="reconstructive">
-                            <div>
-                                <div class="flex gap-space-md items-start mb-space-md">
-                                    <div
-                                        class="relative w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-container">
-                                        <img class="w-full h-full object-cover"
-                                            data-alt="Refined Asian surgeon standing in bright modern healthcare clinic with warm professional smile, pristine white coat, serene hospital background."
-                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3CA3K5KgnaSHx2Jw29P7MGwuFXg4WSMLEges1GszlrRpYz2q3s2JQ5lrhgIOnL5APIIejOTHYxWCt2CZHBQ2C0QfAAUpbyuZYhiW66gwIl1RYeducTzBImQowlzNWDi6E3f1E1BDRyclvcvmIFhrGvAGgNnFwiBQ-wIa1bBrcxV57Y-5Bpo9tbBvuT5zc-92h4DylkFCWfG91miz6WpMqqms8rPXz_Bkf97gkpJTVzEPe6dk4cg" />
-                                    </div>
-                                    <div class="flex-1 min-w-0">
-                                        <div class="flex items-center gap-1 text-secondary mb-0.5">
-                                            <span class="material-symbols-outlined text-[15px]"
-                                                style="font-variation-settings: 'FILL' 1;">star</span>
-                                            <span
-                                                class="font-label-md text-label-md font-bold text-on-surface">4.8</span>
-                                            <span class="text-body-sm font-body-sm text-outline">(110+ cases)</span>
-                                        </div>
-                                        <h3 class="font-headline-sm text-headline-sm font-bold text-primary truncate">
-                                            Prof. Lee Euitai</h3>
-                                        <p class="font-label-md text-label-md text-secondary font-medium">Aesthetic
-                                            &amp; Reconstruction</p>
-                                        <div
-                                            class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
-                                            <span
-                                                class="material-symbols-outlined text-[16px] text-outline">apartment</span>
-                                            <span class="truncate">Chonbuk National Univ Hospital</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="space-y-space-xs mb-space-md">
-                                    <div
-                                        class="inline-flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded-md text-primary font-label-md text-label-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-                                        <span>19 Years Clinical Experience</span>
-                                    </div>
-                                    <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
-                                        Specialized in delicate blepharoplasty, scar revision procedures, and
-                                        restorative aesthetic interventions.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-space-xs pt-space-sm">
-                                <a class="py-2.5 px-space-xs rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center hover:bg-surface-variant transition-colors flex items-center justify-center gap-1.5"
-                                    href="https://wa.me/918800028648?text=Hello%20I%20want%20to%20consult%20Prof.%20Lee%20Euitai"
-                                    target="_blank">
-                                    <svg class="w-4 h-4 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                    </svg>
-                                    <span>WhatsApp</span>
-                                </a>
-                                <a class="py-2.5 px-space-xs rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold text-center hover:bg-secondary transition-colors shadow-sm"
-                                    href="https://wa.me/918800028648?text=Book%20consultation%20with%20Prof.%20Lee%20Euitai"
-                                    target="_blank">
-                                    Consult Now
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
-            <!-- Accredited Top Hospitals Showcase -->
+           
             <section id="hospitals" class="py-space-sm bg-surface-container-low">
                 <div class="w-[92%] sm:w-[90%] max-w-7xl mx-auto">
                     <div class="flex flex-col px-[10px]  md:flex-row md:items-end justify-between mb-space-lg">
                         <div>
-                            <span
-                                class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">World-Renowned
-                                Infrastructure</span>
+                           
                             <h2 class="font-headline-lg sm:text-headline-lg text-headline-md font-bold text-primary">Accredited Partner
                                 Hospital Network</h2>
                         </div>
-                        <a class="inline-flex items-center gap-space-xs font-label-md text-label-md text-secondary font-bold mt-2 md:mt-0 hover:underline group"
-                            href="https://wa.me/918800028648?text=Request%20Hospital%20Network%20Catalogue"
-                            target="_blank">
-                            <!-- <svg class="w-4 h-4 fill-[#25D366] shrink-0 transition-transform group-hover:scale-110"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                            </svg> -->
-                            <span>Request Full 31+ Hospital Network Directory</span>
-                            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                        </a>
+                       
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
                         <!-- Hospital 1 -->
@@ -997,39 +544,38 @@
                                 <div class="relative h-48 bg-surface-container">
                                     <img class="w-full h-full object-cover"
                                         data-alt="Chung-Ang University Hospital in Seoul, modern glass medical skyscraper architectural exterior with manicured gardens and international patient welcome pavilion."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB9E39BPkm101pcX2PRvathb_13UWuJ4eTri0QVgyMvy1raq4H8-REJ2HFHOi8LwTJK9UonwcSeQ39wNwyCoXwwzQJOA3o0NyE9de7-5XIhwwOA0habhpoNyeQmNx3bWFtleSPQAjUiO-25i4UzbqGkBN8-MWDtFzOqQ4JM7rsfZyef1UoqoCiUPWzt9c8Ltkn4Ek0-7s3ysoptsR2Nk7wFeRyF6mzQ1BqwqEj9o3ZceS96kpuJQ" />
-                                    <span
+                                        src="./assets/akash_hospital.webp" />
+                                    <!-- <span
                                         class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
                                         Accredited</span>
                                     <span
                                         class="absolute top-3 right-3 bg-surface/90 backdrop-blur-md text-primary font-label-md text-label-md px-2 py-0.5 rounded-full font-bold">900+
-                                        Beds</span>
+                                        Beds</span> -->
                                 </div>
                                 <div class="p-space-lg">
-                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Chung-Ang
-                                        University Hospital</h3>
-                                    <p
-                                        class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
-                                        <span>102 Heukseok-ro, Dongjak-gu, Seoul</span>
-                                    </p>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Aakash Healthcare, Delhi</h3>
+                                    
                                     <div
                                         class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
                                         <div class="flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined text-[18px] text-secondary">verified</span>
-                                            <span>Dedicated VIP International Cosmetic Lounge</span>
+                                            <span>Advanced Orthopaedics &amp; Joint Replacement</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined text-[18px] text-secondary">translate</span>
-                                            <span>Full-time English, Arabic &amp; Russian Interpreters</span>
+                                            <span>Comprehensive Multispeciality Healthcare Services</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined text-[18px] text-secondary">biotech</span>
-                                            <span>Integrated 3D Virtual Craniofacial Imaging</span>
+                                            <span>Advanced Critical Care Infrastructure</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-secondary">orthopedics</span>
+                                            <span>Complex Spine &amp; Bone Care</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1043,7 +589,7 @@
                                         <path
                                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                     </svg>
-                                    <span>Request Hospital Tour &amp; Quote</span>
+                                    <span>Connect With us</span>
                                 </a>
                             </div>
                         </div>
@@ -1053,54 +599,52 @@
                             <div>
                                 <div class="relative h-48 bg-surface-container">
                                     <img class="w-full h-full object-cover"
-                                        data-alt="Kyung Hee University Hospital at Gangdong, high-tech modern medical complex with grand illuminated entrance and pristine clinical pavilions."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf42H3YxW8-ISKatxUxwiDUPw_vm87iEwN7G4Vas2Dng2i8jZSIL0O-8YggRphsRLGA6y1A4W6tpSjV6eLMNJyCaLFt3FOBjncrZsu-3yjzcXOIgQq0aAOVE3e97DN4eyVt_cau1z00qpt8QUDeVUFotP5QCZecAH1stgaGAgb9sp-0S74RgEABDSy9zCVnqBuqaMzcZD_lY7wNH-1krXUML11wWrGkda21nd_8f9ArsA_poLetQ" />
+                                        data-alt="Artemis Hospital, Gurugram, modern hospital exterior and advanced clinical care campus."
+                                        src="./assets/Artemis-Hospital-Gurgaon.webp" />
                                     <span
-                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">KAHF
-                                        &amp; JCI Ready</span>
-                                    <span
-                                        class="absolute top-3 right-3 bg-surface/90 backdrop-blur-md text-primary font-label-md text-label-md px-2 py-0.5 rounded-full font-bold">800+
-                                        Beds</span>
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
+                                        &amp; NABH-accredited </span>
+                                   
                                 </div>
                                 <div class="p-space-lg">
-                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Kyung Hee
-                                        University Hospital</h3>
-                                    <p
-                                        class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
-                                        <span>892 Dongnam-ro, Gangdong-gu, Seoul</span>
-                                    </p>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Artemis Hospital,
+                                        Gurugram</h3>
+                                    
                                     <div
                                         class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
                                         <div class="flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined text-[18px] text-secondary">verified</span>
-                                            <span>East-West Integrative Post-Op Healing Protocols</span>
+                                            <span>12 Centres of Clinical Excellence</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
-                                                class="material-symbols-outlined text-[18px] text-secondary">translate</span>
-                                            <span>Multilingual Patient Concierge Service</span>
+                                                class="material-symbols-outlined text-[18px] text-secondary">medical_services</span>
+                                            <span>Expertise Across 40 Medical Specialities</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
-                                                class="material-symbols-outlined text-[18px] text-secondary">biotech</span>
-                                            <span>Minimally Invasive Endoscopic Rhinoplasty Units</span>
+                                                class="material-symbols-outlined text-[18px] text-secondary">precision_manufacturing</span>
+                                            <span>Advanced Robotic &amp; Minimally Invasive Surgery</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-secondary">oncology</span>
+                                            <span>Comprehensive Cancer &amp; Oncology Care</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="p-space-lg pt-0">
                                 <a class="w-full py-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center flex items-center justify-center gap-2 hover:bg-secondary-container hover:text-on-secondary transition-all group"
-                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Kyung%20Hee%20University%20Hospital"
+                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Artemis%20Hospital%20Gurugram"
                                     target="_blank">
                                     <svg class="w-4 h-4 fill-[#25D366] shrink-0 transition-transform group-hover:scale-110"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                     </svg>
-                                    <span>Request Hospital Tour &amp; Quote</span>
+                                    <span>Connect With us</span>
                                 </a>
                             </div>
                         </div>
@@ -1110,339 +654,274 @@
                             <div>
                                 <div class="relative h-48 bg-surface-container">
                                     <img class="w-full h-full object-cover"
-                                        data-alt="Inha University Hospital in Incheon, grand metropolitan medical campus adjacent to Incheon International Airport, high-tech modern facade."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx7HV2b8iCGzQ0Ab8VNyQ4tEfO0ozUQnjXZI1X9dp7WSCtcCGqQvWo2CrBS3pyXZ0fWlnPVOpe3FyJQMiwT8MH7f1R8Tw6eL012lUwmwq4zeCOM9Ivwr5SYGCbEEKaq02fvjIzMwvUbGmG3qoUs690kW3zxS8GrQLywDRFNnkkcsy07C2TppaQ5vESf0zGhuHDXSQ1B9zdEa5KXjmHstoHeBdU-M9KoQUDYeoYAb31Z-C1o5P7BA" />
+                                        data-alt="Fortis Memorial Research Institute, Gurugram, advanced tertiary care hospital and research facility."
+                                        src="./assets//fortis-hospital-gurugram.jpg.webp" />
                                     <span
-                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
-                                        Accredited</span>
-                                    <span
-                                        class="absolute top-3 right-3 bg-surface/90 backdrop-blur-md text-primary font-label-md text-label-md px-2 py-0.5 rounded-full font-bold">1,000+
-                                        Beds</span>
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI &amp; NABH-accredited</span>
+                                   
                                 </div>
                                 <div class="p-space-lg">
-                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Inha
-                                        University Hospital</h3>
-                                    <p
-                                        class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-space-md">
-                                        <span
-                                            class="material-symbols-outlined text-[16px] text-secondary">location_on</span>
-                                        <span>27 Inhang-ro, Jung-gu, Incheon</span>
-                                    </p>
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Fortis Memorial Research
+                                        Institute, Gurugram</h3>
+                                   
                                     <div
                                         class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
                                         <div class="flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined text-[18px] text-secondary">verified</span>
-                                            <span>15 Mins from Incheon Airport • Direct Shuttle</span>
+                                            <span>Advanced Tertiary &amp; Quaternary Care</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
-                                                class="material-symbols-outlined text-[18px] text-secondary">translate</span>
-                                            <span>Diplomatic &amp; Expatriate Medical Wing</span>
+                                                class="material-symbols-outlined text-[18px] text-secondary">precision_manufacturing</span>
+                                            <span>Advanced Robotic &amp; Minimally Invasive Surgery</span>
                                         </div>
                                         <div class="flex items-center gap-2">
                                             <span
-                                                class="material-symbols-outlined text-[18px] text-secondary">biotech</span>
-                                            <span>Robotic Precision Plastic Surgery Suite</span>
+                                                class="material-symbols-outlined text-[18px] text-secondary">oncology</span>
+                                            <span>Complex Transplant &amp; Oncology Care</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span
+                                                class="material-symbols-outlined text-[18px] text-secondary">monitor_heart</span>
+                                            <span>Advanced Critical Care &amp; Diagnostics</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="p-space-lg pt-0">
                                 <a class="w-full py-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center flex items-center justify-center gap-2 hover:bg-secondary-container hover:text-on-secondary transition-all group"
-                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Inha%20University%20Hospital"
+                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Fortis%20Memorial%20Research%20Institute%20Gurugram"
                                     target="_blank">
                                     <svg class="w-4 h-4 fill-[#25D366] shrink-0 transition-transform group-hover:scale-110"
                                         viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                     </svg>
-                                    <span>Request Hospital Tour &amp; Quote</span>
+                                    <span>Connect With us</span>
                                 </a>
                             </div>
                         </div>
+                        <!-- Hospital 4 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="relative h-48 bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Max Super Speciality Hospital, Delhi, modern multispecialty hospital providing advanced clinical care."
+                                        src="./assets//Max-Super-Speciality-Hospital-Saket.avif" />
+                                    <span
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
+                                        &amp; NABH Accredited</span>
+                                </div>
+                                <div class="p-space-lg">
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Max Super Speciality
+                                        Hospital, Delhi</h3>
+                                    <div
+                                        class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+                                            <span>32+ Specialities Under One Roof</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">oncology</span>
+                                            <span>Advanced Cancer &amp; Oncology Care</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">cardiology</span>
+                                            <span>Comprehensive Cardiac &amp; Vascular Care</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">neurology</span>
+                                            <span>Advanced Neurosciences &amp; Stroke Care</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-space-lg pt-0">
+                                <a class="w-full py-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center flex items-center justify-center gap-2 hover:bg-secondary-container hover:text-on-secondary transition-all group"
+                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Max%20Super%20Speciality%20Hospital%20Delhi"
+                                    target="_blank">
+                                    <span class="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
+                                    <span>Connect With Us</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hospital 5 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="relative h-48 bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Indraprastha Apollo Hospitals, Delhi, a large multispeciality hospital with advanced clinical services."
+                                        src="./assets/Indraprastha_Apollo_Hospitals.jpg" />
+                                    <span
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
+                                        &amp; NABH Accredited</span>
+                                </div>
+                                <div class="p-space-lg">
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Indraprastha Apollo
+                                        Hospitals, Delhi</h3>
+                                    <div
+                                        class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">local_hospital</span>
+                                            <span>700+ Bed Multispeciality Hospital</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+                                            <span>Advanced Centres Of Clinical Excellence</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">vaccines</span>
+                                            <span>Comprehensive Organ Transplantation Services</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">oncology</span>
+                                            <span>Advanced Oncology &amp; Cancer Care</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-space-lg pt-0">
+                                <a class="w-full py-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center flex items-center justify-center gap-2 hover:bg-secondary-container hover:text-on-secondary transition-all group"
+                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Indraprastha%20Apollo%20Hospitals%20Delhi"
+                                    target="_blank">
+                                    <span class="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
+                                    <span>Connect With Us</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Hospital 6 -->
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+                            <div>
+                                <div class="relative h-48 bg-surface-container">
+                                    <img class="w-full h-full object-cover"
+                                        data-alt="Centre for Sight, Delhi, specialist eye hospital providing advanced vision and retinal care."
+                                        src="./assets/CFS-ASHOK-VIHAR-1.webp" />
+                                    <!-- <span
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">Specialist
+                                        Eye Care</span> -->
+                                </div>
+                                <div class="p-space-lg">
+                                    <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Centre for Sight,
+                                        Delhi</h3>
+                                    <div
+                                        class="space-y-1.5 text-body-sm font-body-sm text-on-surface-variant mb-space-md">
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">visibility</span>
+                                            <span>Comprehensive Eye Care Services</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                          <span class="material-symbols-outlined text-[18px] text-secondary">verified</span>
+                                            <span>Advanced Laser Vision Correction Procedures</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">lens</span>
+                                            <span>Expert Cataract &amp; Lens Care</span>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <span class="material-symbols-outlined text-[18px] text-secondary">eyeglasses</span>
+                                            <span>Comprehensive Retina &amp; Vitreous Care</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-space-lg pt-0">
+                                <a class="w-full py-2.5 rounded-full bg-surface-container-high text-primary font-label-md text-label-md font-bold text-center flex items-center justify-center gap-2 hover:bg-secondary-container hover:text-on-secondary transition-all group"
+                                    href="https://wa.me/918800028648?text=Inquiry%20regarding%20Centre%20for%20Sight%20Delhi"
+                                    target="_blank">
+                                    <span class="material-symbols-outlined text-[18px] text-[#25D366]">chat</span>
+                                    <span>Connect With Us</span>
+                                </a>
+                            </div>
+                        </div>
+
+                       
                     </div>
                 </div>
             </section>
-            <!-- Transparent Procedure Pricing Estimator (Cost Comparison) -->
-            <!-- <section id="cost-estimator" class="py-space-xl bg-surface">
-                <div class="max-w-7xl mx-auto px-margin">
-                    <div class="text-center max-w-3xl mx-auto mb-space-lg">
-                        <span
-                            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Transparent
-                            Medical Economics</span>
-                        <h2 class="font-headline-lg text-headline-lg font-bold text-primary">Procedure Cost Comparison:
-                            US / UK vs. IndiaMD</h2>
-                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                            Save 50% to 70% on premier cosmetic surgeries without sacrificing board-certified expertise,
-                            FDA-cleared implants, or sterile hospital safety.
-                        </p>
-                    </div>
-                    <!-- Pricing Comparison Table Container -
-                    <div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden">
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left">
-                                <thead>
-                                    <tr
-                                        class="bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider">
-                                        <th class="py-space-md px-space-lg">Cosmetic Procedure</th>
-                                        <th class="py-space-md px-space-md">US / UK Average Cost</th>
-                                        <th class="py-space-md px-space-md">IndiaMD Partner Package</th>
-                                        <th class="py-space-md px-space-md">Expected Savings</th>
-                                        <th class="py-space-md px-space-lg text-right">Inquiry</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-surface-container font-body-md text-body-md">
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">Rhinoplasty (Nose Surgery)</div>
-                                            <div class="text-body-sm font-body-sm text-outline">Open/Closed structural
-                                                correction &amp; septoplasty</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$12,000
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$4,000 – $6,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~65%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20Rhinoplasty"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">Facelift &amp; Neck Tightening (SMAS)
-                                            </div>
-                                            <div class="text-body-sm font-body-sm text-outline">Deep-plane rejuvenation
-                                                with minimal incisions</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$18,000
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$7,000 – $12,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~60%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20Facelift"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">Eyelid Surgery (Blepharoplasty)</div>
-                                            <div class="text-body-sm font-body-sm text-outline">Upper/Lower eyelid lift
-                                                &amp; fat repositioning</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$6,500
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$2,000 – $4,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~70%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20Blepharoplasty"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">Jaw Reduction (V-Line Surgery)</div>
-                                            <div class="text-body-sm font-body-sm text-outline">Mandibular angle
-                                                contouring + chin genioplasty</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$22,000
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$5,000 – $15,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~65%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20V-Line%20Surgery"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">Breast Augmentation (Motiva / Mentor)
-                                            </div>
-                                            <div class="text-body-sm font-body-sm text-outline">Dual-plane subfascial
-                                                silicone micro-textured implants</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$14,000
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$8,000 – $12,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~45%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20Breast%20Augmentation"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr class="hover:bg-surface-container-low transition-colors">
-                                        <td class="py-space-md px-space-lg">
-                                            <div class="font-bold text-primary">High-Definition Liposuction &amp; 360
-                                                Sculpt</div>
-                                            <div class="text-body-sm font-body-sm text-outline">VASER ultrasonic fat
-                                                extraction with skin retract</div>
-                                        </td>
-                                        <td class="py-space-md px-space-md text-on-surface-variant line-through">$16,000
-                                        </td>
-                                        <td class="py-space-md px-space-md font-bold text-primary">$4,000 – $7,000</td>
-                                        <td class="py-space-md px-space-md">
-                                            <span
-                                                class="bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold px-2 py-1 rounded-full">Save
-                                                ~60%</span>
-                                        </td>
-                                        <td class="py-space-md px-space-lg text-right">
-                                            <a class="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary font-bold hover:underline hover:text-[#25D366] transition-colors"
-                                                href="https://wa.me/918800028648?text=Quote%20Request%20for%20Liposuction"
-                                                target="_blank">
-                                                <svg class="w-3.5 h-3.5 fill-[#25D366] shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                                </svg>
-                                                <span>Get Details</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- Banner inside table footer --
-                        <div
-                            class="p-space-lg bg-surface-container flex flex-col md:flex-row items-center justify-between gap-space-md">
-                            <div class="flex items-center gap-space-sm">
-                                <span class="material-symbols-outlined text-[32px] text-secondary">verified_user</span>
-                                <div>
-                                    <div class="font-label-lg text-label-lg font-bold text-primary">Need a Custom
-                                        Bundled Surgical Estimate?</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Send your photos or
-                                        case notes securely. You receive 3 verified proposals within 24–48 hours.</div>
-                                </div>
-                            </div>
-                            <a class="px-space-lg py-3 rounded-full bg-secondary-container text-on-secondary font-label-md text-label-md font-bold shadow-md hover:bg-secondary transition-all whitespace-nowrap flex items-center justify-center gap-2 group"
-                                href="https://wa.me/918800028648?text=Hi%20IndiaMD%20I%20would%20like%20a%20Custom%20Surgery%20Quote"
-                                target="_blank">
-                                <svg class="w-4 h-4 fill-white shrink-0 transition-transform group-hover:scale-110" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                </svg>
-                                <span>Send Photos for Doctor Evaluation</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section> -->
+           
             <!-- Step-by-Step International Patient Journey -->
             <section id="how-it-works" class="md:py-space-xl py-space-sm bg-surface-container-low">
                 <div class="w-[92%] sm:w-[90%] max-w-7xl mx-auto">
                     <div class="text-center max-w-2xl mx-auto mb-space-lg">
-                        <span
-                            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Seamless
-                            Concierge Logistics</span>
+                  
                         <h2 class="font-headline-lg md:text-headline-lg text-headline-md font-bold text-primary">How Your Medical Journey
                             Works</h2>
                         <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                            From your first diagnostic query to post-operative recovery back home, IndiaMD handles all
-                            the intricate details.
+                            From your first consultation to recovery back home, IndiaMD coordinates every step of your healthcare journey—connecting you with the right specialists, hospitals, travel support, and personalized care. 
                         </p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md relative">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-space-md relative">
                         <!-- Step 1 -->
                         <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
                             <div
                                 class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
                                 1
                             </div>
-                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Share
-                                Medical Query</h3>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Connect</h3>
                             <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                Upload diagnostic records or aesthetic goals securely online or via <a
-                                    href="https://wa.me/918800028648?text=Hello%20IndiaMD%20I%20want%20to%20share%20my%20medical%20records"
-                                    target="_blank"
-                                    class="inline-flex items-center gap-1 font-semibold text-[#25D366] hover:underline">
-                                    
-                                    WhatsApp</a> for
-                                immediate case appraisal.
+                               Share your medical needs and records with our team. 
                             </p>
                         </div>
                         <!-- Step 2 -->
                         <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
                             <div
-                                class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
+                                class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
                                 2
                             </div>
-                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Get Doctor
-                                Opinions</h3>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Consult</h3>
                             <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                Review detailed medical opinions, customized surgical plans, and clear quotes from 3+
-                                accredited partner centers.
+                                We will help you connect with experienced doctors and receive expert medical guidance.
                             </p>
                         </div>
                         <!-- Step 3 -->
                         <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
                             <div
-                                class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
+                                class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
                                 3
                             </div>
-                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Visa &amp;
-                                Travel Booking</h3>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Plan</h3>
                             <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                We issue verified embassy medical visa invitations, arrange VIP airport transfers, and
-                                coordinate hotel bookings.
+                               Get treatment options, hospital details, estimated costs, and a personalized care plan. 
                             </p>
                         </div>
                         <!-- Step 4 -->
                         <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
+                         
                             <div
                                 class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
                                 4
                             </div>
-                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Surgery
-                                &amp; Follow-up</h3>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Travel</h3>
                             <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                                Undergo treatment guided by a personal bilingual liaison, followed by structured
-                                long-term digital tele-health checkups.
+                                We assist with medical visas, travel arrangements, accommodation, and local support.
+                            </p>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
+                               <div
+                                class="w-10 h-10 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
+                                5
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Treat </h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                               Receive coordinated care at leading hospitals with support throughout your treatment.
+                            </p>
+                        </div>
+                        <!-- Step 6 -->
+                        <div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative">
+                               <div
+                                class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary font-bold flex items-center justify-center font-headline-sm text-headline-sm mb-space-md">
+                                6
+                            </div>
+                            <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-space-xs">Recover</h3>
+                            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                Continue your recovery with follow-up coordination and guidance, even after you return home.
                             </p>
                         </div>
                     </div>
@@ -1452,42 +931,33 @@
             <section class="py-space-xl bg-surface">
                 <div class="w-[88%] sm:w-[90%] max-w-7xl mx-auto">
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-                        <div class="lg:col-span-6 space-y-space-md">
-                            <span
-                                class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Technological
-                                Edge</span>
+                        <div class="lg:col-span-6 lg:order-2 space-y-space-md">
+                           
                             <h2 class="font-headline-lg sm:text-headline-lg text-headline-md font-bold text-primary leading-tight">
-                                Why Discerning Global Patients Choose South Korea &amp; India via IndiaMD
+                                Why Choose India for Treatment? 
                             </h2>
                             <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                                South Korea performs over one million cosmetic procedures annually—with Seoul widely
-                                recognized as the plastic surgery capital of the world. Paired with India’s
-                                JCI-accredited medical conglomerates, our patients access the highest surgical safety
-                                rates and subtle, natural anatomical harmony.
+                                India has emerged as a major destination for international patients seeking advanced medical treatment, experienced specialists, and comprehensive healthcare services. The country has a large network of private and public hospitals offering specialized treatment across multiple medical disciplines. 
                             </p>
+                             <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                               Leading hospitals across cities such as New Delhi, Mumbai, Chennai, Hyderabad, Bengaluru, Kolkata, and Ahmedabad provide specialized care in cardiology, oncology, orthopedics, neurology, neurosurgery, gastroenterology, organ transplantation, urology, fertility, cosmetic and reconstructive surgery, and more.
                             <div class="space-y-space-sm pt-space-xs">
                                 <div
                                     class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
                                     <span
                                         class="material-symbols-outlined text-[24px] text-secondary shrink-0">view_in_ar</span>
                                     <div>
-                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">3D Virtual
-                                            Surgery Simulation</h4>
-                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Evaluate your
-                                            predicted post-operative facial harmony using computerized
-                                            stereophotogrammetry prior to making incisions.</p>
-                                    </div>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Advanced & Robotic Technology:</h4>
+                                            <p class="font-body-sm text-body-sm text-on-surface-variant">Connect with specialists across a wide range of medical disciplines and complex treatments.</p>
+                                        </div>
                                 </div>
                                 <div
                                     class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
                                     <span
                                         class="material-symbols-outlined text-[24px] text-secondary shrink-0">healing</span>
                                     <div>
-                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Advanced Scar
-                                            Minimization Protocols</h4>
-                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Hyperbaric oxygen
-                                            chambers, post-surgical laser therapy, and micro-suture techniques that
-                                            accelerate recovery.</p>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Experienced Medical Specialists: </h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Connect with specialists across a wide range of medical disciplines and complex treatments.</p>
                                     </div>
                                 </div>
                                 <div
@@ -1495,39 +965,56 @@
                                     <span
                                         class="material-symbols-outlined text-[24px] text-secondary shrink-0">verified</span>
                                     <div>
-                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Stringent JCI
-                                            &amp; NABH Compliance</h4>
-                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Operating theaters
-                                            with laminar airflow HEPA filtration, dedicated in-house board-certified
-                                            anesthesiologists, and zero patient commissions.</p>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Cost-Effective Treatment:</h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Access quality healthcare at competitive costs, with transparent treatment estimates.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-secondary shrink-0">verified</span>
+                                    <div>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Multilingual Translator Support:</h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Language assistance and interpreter services to help international patients communicate comfortably with doctors and care teams.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-secondary shrink-0">verified</span>
+                                    <div>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Travel & Accommodation Support:</h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Assistance with airport transfers, hotels, local transportation, SIM cards, and other travel needs</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-secondary shrink-0">verified</span>
+                                    <div>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Dedicated Medical Concierge:</h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant"> A dedicated IndiaMD coordinator to help manage appointments, medical records, hospital coordination, and communication.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+                                    <span
+                                        class="material-symbols-outlined text-[24px] text-secondary shrink-0">verified</span>
+                                    <div>
+                                        <h4 class="font-label-lg text-label-lg font-bold text-primary">Forex & Payment Assistance:</h4>
+                                        <p class="font-body-sm text-body-sm text-on-surface-variant">Support with foreign currency exchange and payment-related requirements during your medical journey.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="lg:col-span-6">
+                        <div class="lg:col-span-6 lg:order-1 lg:sticky lg:top-24 lg:self-start">
                             <div class="relative bg-surface-container rounded-2xl p-space-md overflow-hidden shadow-xl">
-                                <div class="relative h-96 w-full rounded-xl overflow-hidden">
+                                <div class="relative h-96 lg:h-[calc(100vh-8rem)] w-full rounded-xl overflow-hidden">
                                     <img class="w-full h-full object-cover"
                                         data-alt="State of the art surgical hospital operation theatre with high-definition digital 3D visualization displays, robotic surgery arms, and sterile ambient purple and clinical white lighting."
                                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuABrxMVnMVkNvbftlDvDnKnh5ArLkMhWf3kTAKfBRv-SLFJnRg4BMxahi77DaTJcrLSmmvxF6IK-9ep0ggxhL3BwWYPuQ5ZKYfJSGM_ssgQPZsZ7h8gQ1cW62ygWIbYdvRAqdHBoVASVL-HmBgOOBsOGNdzsTH89CDJ-omvOsIUP3sohfOsQIE6u_NJWkdpk3o500toQaPn5YUhaHsUIRCvUVG_aFgnN8K0oa-1smgFvR-8ABBx-A" />
                                     <!-- Floating Glass Overlay Info Pill -->
-                                    <div
-                                        class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-space-md rounded-xl shadow-lg">
-                                        <div class="flex items-center justify-between">
-                                            <div>
-                                                <span
-                                                    class="font-label-sm text-label-sm font-bold text-secondary uppercase">Precision
-                                                    Care</span>
-                                                <h4 class="font-headline-sm text-headline-sm font-bold text-primary">
-                                                    100% Specialist-Led Surgeries</h4>
-                                            </div>
-                                            <span
-                                                class="material-symbols-outlined text-[28px] text-secondary">verified_user</span>
-                                        </div>
-                                        <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Zero shadowing
-                                            doctors or trainee handoffs. Every procedure is directly executed by your
-                                            chosen Professor.</p>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -1538,14 +1025,9 @@
             <section id="patient-stories" class="md:py-space-xl py-space-sm bg-surface-container-low">
                 <div class="max-w-7xl mx-auto px-margin">
                     <div class="text-center max-w-2xl mx-auto mb-space-lg">
-                        <span
-                            class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Verified
-                            Case Experiences</span>
-                        <h2 class="font-headline-lg sm:text-headline-lg text-headline-md font-bold text-primary">Patient Stories From Across
-                            The Globe</h2>
-                        <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-                            Real individuals who trusted IndiaMD to facilitate their surgical transformations abroad.
-                        </p>
+                   
+                        <h2 class="font-headline-lg sm:text-headline-lg text-headline-md font-bold text-primary">Our Patients Success Stories </h2>
+                        
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
                         <!-- Review 1 -->
@@ -1566,20 +1048,17 @@
                                 </div>
                                 <p
                                     class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed mb-space-md">
-                                    "I traveled from Sydney to Seoul for secondary rhinoplasty with Prof. Yoo. IndiaMD
-                                    arranged my medical visa in 48 hours, met me right outside customs, and provided an
-                                    English coordinator who attended every consult. The result is so natural!"
+                                    "I had been living with severe knee pain for years and finally decided to look at treatment in India. What I appreciated most was knowing the estimated treatment cost before I travelled. IndiaMD explained what was included and helped me understand the different hospital options. There were no confusing surprises along the way. The surgery went well, and I'm now walking much more comfortably!"
                                 </p>
                             </div>
                             <div class="pt-space-sm flex items-center gap-space-sm">
                                 <div
                                     class="w-11 h-11 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-label-lg">
-                                    EC
+                                    PM
                                 </div>
                                 <div>
-                                    <div class="font-label-lg text-label-lg font-bold text-primary">Elena C.</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Sydney, Australia •
-                                        Rhinoplasty</div>
+                                    <div class="font-label-lg text-label-lg font-bold text-primary">Peter M.</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Knee Replacement Surgery</div>
                                 </div>
                             </div>
                         </div>
@@ -1601,20 +1080,17 @@
                                 </div>
                                 <p
                                     class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed mb-space-md">
-                                    "In London, my quotes for a deep plane facelift and neck lift exceeded £22,000.
-                                    Through IndiaMD, I was treated by Prof. Kim Woo Seob at Chung-Ang Hospital. Total
-                                    costs, including recovery hotel, were under £9,500. Flawless experience."
+                                   "I was travelling to India for the first time and had a lot of questions. I used the IndiaMD app to share my medical reports, keep track of my appointments and stay in touch with the care team. It was helpful to have my information in one place instead of searching through messages and emails. The support continued even after I reached India."
                                 </p>
                             </div>
                             <div class="pt-space-sm flex items-center gap-space-sm">
                                 <div
                                     class="w-11 h-11 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-label-lg">
-                                    MW
+                                    CO
                                 </div>
                                 <div>
-                                    <div class="font-label-lg text-label-lg font-bold text-primary">Marcus W.</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">London, UK • Facelift
-                                        &amp; Neck Lift</div>
+                                    <div class="font-label-lg text-label-lg font-bold text-primary">Chinedu O.</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Spine Surgery</div>
                                 </div>
                             </div>
                         </div>
@@ -1636,20 +1112,17 @@
                                 </div>
                                 <p
                                     class="font-body-md text-body-md text-on-surface-variant italic leading-relaxed mb-space-md">
-                                    "Having an Arabic speaking patient manager by my side in South Korea made everything
-                                    tranquil. Prof. Bae did my V-line jaw contouring. The hospital facilities in Seoul
-                                    felt like a 5-star hotel with gold standard medicine."
+                                    "Our daughter was only seven when we came to India for her heart surgery, so naturally we were very worried. IndiaMD helped us coordinate the hospital, appointments and travel arrangements. The team was especially helpful with the small things that matter when you are travelling with a child. Knowing we had someone to contact whenever we needed help gave us a lot of comfort."
                                 </p>
                             </div>
                             <div class="pt-space-sm flex items-center gap-space-sm">
                                 <div
                                     class="w-11 h-11 rounded-full bg-primary-container text-on-primary font-bold flex items-center justify-center text-label-lg">
-                                    FA
+                                    PA
                                 </div>
                                 <div>
-                                    <div class="font-label-lg text-label-lg font-bold text-primary">Fatima A.</div>
-                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Dubai, UAE • V-Line
-                                        Surgery</div>
+                                    <div class="font-label-lg text-label-lg font-bold text-primary">Parents of Amina.</div>
+                                    <div class="font-body-sm text-body-sm text-on-surface-variant">Spine Surgery</div>
                                 </div>
                             </div>
                         </div>
@@ -1665,16 +1138,15 @@
                 <div class="max-w-7xl mx-auto px-margin text-center relative z-10">
                     <span
                         class="inline-block px-space-md py-1 rounded-full bg-primary-container text-secondary-container font-label-md text-label-md font-bold mb-space-sm">
-                        Start Your Transformation Today
+                        Start Your Healthcare Journey Today
                     </span>
                     <h2
                         class="font-headline-xl text-headline-md md:text-headline-xl font-bold tracking-tight mb-space-md max-w-3xl mx-auto">
-                        Receive Comprehensive Treatment Options &amp; Verified Hospital Quotes
+                        Get Personalized Treatment Options &amp; Hospital Estimates
                     </h2>
                     <p
                         class="font-body-lg text-body-lg text-surface-variant max-w-2xl mx-auto mb-space-lg leading-relaxed">
-                        Join over 1,200 international patients who saved up to 70% while being treated by the world's
-                        most experienced cosmetic surgeons.
+                        Connect with trusted hospitals and experienced specialists in India. IndiaMD helps international patients with doctor consultations, treatment planning, hospital coordination, travel support, and follow-up care.
                     </p>
                     <div
                         class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-space-md w-full max-w-md sm:max-w-none mx-auto">
@@ -1686,34 +1158,17 @@
                                 <path
                                     d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                             </svg>
-                            <span class="hidden sm:inline">Chat on WhatsApp Directly</span>
+                            <span class="hidden sm:inline"> Chat on WhatsApp</span>
                             <span class="sm:hidden">WhatsApp Chat Directly</span>
                         </a>
                         <a class="w-full sm:w-auto px-5 sm:px-space-lg py-3 sm:py-3.5 rounded-full bg-primary-container text-on-primary font-label-lg text-[14px] sm:text-label-lg font-bold hover:bg-surface-container-high hover:text-primary transition-all flex items-center justify-center gap-2 group border border-primary-fixed/20"
                             href="tel:+918800028648">
                             <span class="material-symbols-outlined text-[19px] sm:text-[20px] shrink-0">call</span>
-                            <span class="hidden sm:inline">Call 24/7 Concierge (+91 88000 28648)</span>
-                            <span class="sm:hidden">Call 24/7: +91 88000 28648</span>
+                            <span class="hidden sm:inline">Call Us</span>
+                            <span class="sm:hidden">Call Us</span>
                         </a>
                     </div>
-                    <div
-                        class="mt-space-md sm:mt-space-lg flex flex-wrap items-center justify-center gap-3 sm:gap-space-lg text-surface-variant font-body-sm text-xs sm:text-body-sm">
-                        <span class="flex items-center gap-1 shrink-0">
-                            <span
-                                class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
-                            Zero Diagnostic Fees
-                        </span>
-                        <span class="flex items-center gap-1 shrink-0">
-                            <span
-                                class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
-                            Direct Official Hospital Rates
-                        </span>
-                        <span class="flex items-center gap-1 shrink-0">
-                            <span
-                                class="material-symbols-outlined text-[16px] text-secondary-container">check_circle</span>
-                            Guaranteed Confidentiality
-                        </span>
-                    </div>
+                   
                 </div>
             </section>
             <!-- Sticky Bottom Quick Action Strip for Mobile & Quick Dial -->
@@ -1747,9 +1202,93 @@
             if (quoteForm) {
                 const phoneInput = document.getElementById('patient-phone');
                 const countryCodeInput = quoteForm.elements.country_code;
+                const countryCodeDisplay = document.getElementById('country-code-display');
+                const countryField = document.getElementById('patient-country');
+                const cityField = document.getElementById('patient-city-field');
+                const cityInput = document.getElementById('patient-city');
                 const submitButton = document.getElementById('quote-submit-button');
                 const successBanner = document.getElementById('quote-success-banner');
                 const errorBanner = document.getElementById('quote-error-banner');
+
+                const countryOptions = [
+                    ['Afghanistan', '+93'], ['Albania', '+355'], ['Algeria', '+213'], ['Andorra', '+376'],
+                    ['Angola', '+244'], ['Antigua and Barbuda', '+1'], ['Argentina', '+54'], ['Armenia', '+374'],
+                    ['Australia', '+61'], ['Austria', '+43'], ['Azerbaijan', '+994'], ['Bahamas', '+1'],
+                    ['Bahrain', '+973'], ['Bangladesh', '+880'], ['Barbados', '+1'], ['Belarus', '+375'],
+                    ['Belgium', '+32'], ['Belize', '+501'], ['Benin', '+229'], ['Bhutan', '+975'],
+                    ['Bolivia', '+591'], ['Bosnia and Herzegovina', '+387'], ['Botswana', '+267'], ['Brazil', '+55'],
+                    ['Brunei', '+673'], ['Bulgaria', '+359'], ['Burkina Faso', '+226'], ['Burundi', '+257'],
+                    ['Cabo Verde', '+238'], ['Cambodia', '+855'], ['Cameroon', '+237'], ['Canada', '+1'],
+                    ['Central African Republic', '+236'], ['Chad', '+235'], ['Chile', '+56'], ['China', '+86'],
+                    ['Colombia', '+57'], ['Comoros', '+269'], ['Congo', '+242'], ['Costa Rica', '+506'],
+                    ['Croatia', '+385'], ['Cuba', '+53'], ['Cyprus', '+357'], ['Czechia', '+420'],
+                    ['Democratic Republic of the Congo', '+243'], ['Denmark', '+45'], ['Djibouti', '+253'],
+                    ['Dominica', '+1'], ['Dominican Republic', '+1'], ['Ecuador', '+593'], ['Egypt', '+20'],
+                    ['El Salvador', '+503'], ['Equatorial Guinea', '+240'], ['Eritrea', '+291'], ['Estonia', '+372'],
+                    ['Eswatini', '+268'], ['Ethiopia', '+251'], ['Fiji', '+679'], ['Finland', '+358'],
+                    ['France', '+33'], ['Gabon', '+241'], ['Gambia', '+220'], ['Georgia', '+995'],
+                    ['Germany', '+49'], ['Ghana', '+233'], ['Greece', '+30'], ['Grenada', '+1'],
+                    ['Guatemala', '+502'], ['Guinea', '+224'], ['Guinea-Bissau', '+245'], ['Guyana', '+592'],
+                    ['Haiti', '+509'], ['Honduras', '+504'], ['Hungary', '+36'], ['Iceland', '+354'],
+                    ['India', '+91'], ['Indonesia', '+62'], ['Iran', '+98'], ['Iraq', '+964'], ['Ireland', '+353'],
+                    ['Israel', '+972'], ['Italy', '+39'], ['Jamaica', '+1'], ['Japan', '+81'], ['Jordan', '+962'],
+                    ['Kazakhstan', '+7'], ['Kenya', '+254'], ['Kiribati', '+686'], ['Kuwait', '+965'],
+                    ['Kyrgyzstan', '+996'], ['Laos', '+856'], ['Latvia', '+371'], ['Lebanon', '+961'],
+                    ['Lesotho', '+266'], ['Liberia', '+231'], ['Libya', '+218'], ['Liechtenstein', '+423'],
+                    ['Lithuania', '+370'], ['Luxembourg', '+352'], ['Madagascar', '+261'], ['Malawi', '+265'],
+                    ['Malaysia', '+60'], ['Maldives', '+960'], ['Mali', '+223'], ['Malta', '+356'],
+                    ['Marshall Islands', '+692'], ['Mauritania', '+222'], ['Mauritius', '+230'], ['Mexico', '+52'],
+                    ['Micronesia', '+691'], ['Moldova', '+373'], ['Monaco', '+377'], ['Mongolia', '+976'],
+                    ['Montenegro', '+382'], ['Morocco', '+212'], ['Mozambique', '+258'], ['Myanmar', '+95'],
+                    ['Namibia', '+264'], ['Nauru', '+674'], ['Nepal', '+977'], ['Netherlands', '+31'],
+                    ['New Zealand', '+64'], ['Nicaragua', '+505'], ['Niger', '+227'], ['Nigeria', '+234'],
+                    ['North Korea', '+850'], ['North Macedonia', '+389'], ['Norway', '+47'], ['Oman', '+968'],
+                    ['Pakistan', '+92'], ['Palau', '+680'], ['Palestine', '+970'], ['Panama', '+507'],
+                    ['Papua New Guinea', '+675'], ['Paraguay', '+595'], ['Peru', '+51'], ['Philippines', '+63'],
+                    ['Poland', '+48'], ['Portugal', '+351'], ['Qatar', '+974'], ['Romania', '+40'],
+                    ['Russia', '+7'], ['Rwanda', '+250'], ['Saint Kitts and Nevis', '+1'], ['Saint Lucia', '+1'],
+                    ['Saint Vincent and the Grenadines', '+1'], ['Samoa', '+685'], ['San Marino', '+378'],
+                    ['Sao Tome and Principe', '+239'], ['Saudi Arabia', '+966'], ['Senegal', '+221'],
+                    ['Serbia', '+381'], ['Seychelles', '+248'], ['Sierra Leone', '+232'], ['Singapore', '+65'],
+                    ['Slovakia', '+421'], ['Slovenia', '+386'], ['Solomon Islands', '+677'], ['Somalia', '+252'],
+                    ['South Africa', '+27'], ['South Korea', '+82'], ['South Sudan', '+211'], ['Spain', '+34'],
+                    ['Sri Lanka', '+94'], ['Sudan', '+249'], ['Suriname', '+597'], ['Sweden', '+46'],
+                    ['Switzerland', '+41'], ['Syria', '+963'], ['Tajikistan', '+992'], ['Tanzania', '+255'],
+                    ['Thailand', '+66'], ['Timor-Leste', '+670'], ['Togo', '+228'], ['Tonga', '+676'],
+                    ['Trinidad and Tobago', '+1'], ['Tunisia', '+216'], ['Turkey', '+90'], ['Turkmenistan', '+993'],
+                    ['Tuvalu', '+688'], ['Uganda', '+256'], ['Ukraine', '+380'], ['United Arab Emirates', '+971'],
+                    ['United Kingdom', '+44'], ['United States', '+1'], ['Uruguay', '+598'], ['Uzbekistan', '+998'],
+                    ['Vanuatu', '+678'], ['Vatican City', '+39'], ['Venezuela', '+58'], ['Vietnam', '+84'],
+                    ['Yemen', '+967'], ['Zambia', '+260'], ['Zimbabwe', '+263']
+                ];
+                const countryCodes = Object.fromEntries(countryOptions);
+                countryField.replaceChildren(...countryOptions.map(([country]) => {
+                    const option = document.createElement('option');
+                    option.value = country;
+                    option.textContent = country;
+                    option.selected = country === 'India';
+                    return option;
+                }));
+                countryField.value = 'India';
+                countryCodeDisplay.replaceChildren(...countryOptions
+                    .filter(([, code], index, countries) => countries.findIndex(([, value]) => value === code) === index)
+                    .map(([country, code]) => {
+                        const option = document.createElement('option');
+                        option.value = code;
+                        option.textContent = `${country.slice(0, 3).toUpperCase()} ${code}`;
+                        return option;
+                    }));
+
+                function updateCountryFields() {
+                    const isIndia = countryField.value === 'India';
+                    const countryCode = countryCodes[countryField.value] || '+91';
+
+                    countryCodeDisplay.value = countryCode;
+                    countryCodeInput.value = countryCode;
+                    cityField.classList.toggle('hidden', !isIndia);
+                    cityInput.required = isIndia;
+                    if (!isIndia) cityInput.value = '';
+                }
 
                 function validatePatientPhone() {
                     const phoneDigits = phoneInput.value.replace(/\D/g, '');
@@ -1760,7 +1299,11 @@
                 }
 
                 phoneInput.addEventListener('input', validatePatientPhone);
-                countryCodeInput.addEventListener('change', validatePatientPhone);
+                countryField.addEventListener('change', () => {
+                    updateCountryFields();
+                    validatePatientPhone();
+                });
+                updateCountryFields();
 
                 quoteForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
@@ -1792,7 +1335,7 @@
                         }
                         successBanner.classList.remove('hidden');
                         quoteForm.reset();
-                        countryCodeInput.value = '+91';
+                        updateCountryFields();
                     } catch (error) {
                         errorBanner.textContent = error.message || 'We could not send your request. Please try again.';
                         errorBanner.classList.remove('hidden');
@@ -1955,31 +1498,32 @@
                 <div class="flex items-center gap-space-sm"><span
                         class="material-symbols-outlined text-secondary text-[26px]">verified</span>
                     <div>
-                        <div class="font-label-lg text-label-lg font-bold text-primary">JCI &amp; NABH Accredited</div>
-                        <div class="text-body-sm font-body-sm">International gold standard hospital partners</div>
+                        <div class="font-label-lg text-label-lg font-bold text-primary">JCI &amp; NABH-Accredited Hospitals</div>
+                        <!-- <div class="text-body-sm font-body-sm">International gold standard hospital partners</div> -->
                     </div>
                 </div>
                 <div class="flex items-center gap-space-sm"><span
                         class="material-symbols-outlined text-secondary text-[26px]">flight_takeoff</span>
                     <div>
-                        <div class="font-label-lg text-label-lg font-bold text-primary">Airport Concierge</div>
-                        <div class="text-body-sm font-body-sm">Complimentary VIP pick-up &amp; transfer</div>
+                        <div class="font-label-lg text-label-lg font-bold text-primary">Airport Pickup and Drop Service</div>
+                        <!-- <div class="text-body-sm font-body-sm">Complimentary VIP pick-up &amp; transfer</div> -->
                     </div>
                 </div>
                 <div class="flex items-center gap-space-sm"><span
                         class="material-symbols-outlined text-secondary text-[26px]">translate</span>
                     <div>
                         <div class="font-label-lg text-label-lg font-bold text-primary">Multilingual Support</div>
-                        <div class="text-body-sm font-body-sm">Dedicated medical translators onsite</div>
+                        <!-- <div class="text-body-sm font-body-sm">Dedicated medical translators onsite</div> -->
                     </div>
                 </div>
                 <div class="flex items-center gap-space-sm"><span
                         class="material-symbols-outlined text-secondary text-[26px]">savings</span>
                     <div>
-                        <div class="font-label-lg text-label-lg font-bold text-primary">70-85% Cost Savings</div>
-                        <div class="text-body-sm font-body-sm">Transparent bundled surgical packages</div>
+                        <div class="font-label-lg text-label-lg font-bold text-primary">Transparent Treatment Costs</div>
+                        <!-- <div class="text-body-sm font-body-sm">Transparent bundled surgical packages</div> -->
                     </div>
                 </div>
+               
             </div>
         </div>
 
@@ -1991,9 +1535,7 @@
             <p class="text-[13px] text-outline font-medium">
                 © 2026 IndiaMD International. All rights reserved.
             </p>
-            <!-- <p class="text-[11px] sm:text-[12px] leading-relaxed text-outline">
-                <strong>Medical Disclaimer:</strong> IndiaMD is a facilitator and medical travel advisory network, not a licensed healthcare provider. All diagnostic evaluations, surgical procedures, and medical advice are provided exclusively by certified physicians in accredited hospital facilities.
-            </p> -->
+           
         </div>
     </footer>
 </body>
