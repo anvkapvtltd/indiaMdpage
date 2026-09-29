@@ -229,7 +229,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg lg:gap-space-xl items-stretch">
                         <div class="hidden sm:flex lg:col-span-7 relative h-full min-h-[420px] lg:min-h-0 overflow-hidden rounded-xl bg-primary">
                             <img class="absolute inset-0 h-full w-full object-cover"
-                                src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&amp;fit=crop&amp;w=1600&amp;q=90"
+                                src="./assets/image1.jpeg"
                                 alt="Doctor providing attentive care to a patient in a bright modern clinic" />
                             <div class="absolute inset-0 bg-gradient-to-t from-[#1c1020]/90 via-[#1c1020]/30 to-transparent"></div>
                             <div class="relative z-10 mt-auto max-w-2xl p-6 sm:p-8 lg:p-10">
@@ -272,49 +272,18 @@
                                             Name</label>
                                         <input
                                             class="w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all"
-                                            name="name" placeholder="e.g. Priya Sharma" autocomplete="name" required type="text" />
+                                            name="name" placeholder="e.g. Emmanuel Kibuthu" autocomplete="name" required type="text" />
                                     </div>
                                     <div>
                                         <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-country">Country</label>
                                         <div class="form-select-wrap">
                                             <select id="patient-country" name="country" aria-label="Select country"
                                                 class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer" required>
-                                                <option value="India" selected>India</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div id="patient-city-field">
-                                        <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-city">City</label>
-                                        <div class="form-select-wrap">
-                                            <select id="patient-city" name="city" aria-label="Select city"
-                                                class="px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all cursor-pointer" required>
-                                                <option value="New Delhi">New Delhi</option>
-                                                <option value="Mumbai">Mumbai</option>
-                                                <option value="Chennai">Chennai</option>
-                                                <option value="Hyderabad">Hyderabad</option>
-                                                <option value="Bengaluru">Bengaluru</option>
-                                                <option value="Kolkata">Kolkata</option>
-                                                <option value="Ahmedabad">Ahmedabad</option>
-                                                <option value="Pune">Pune</option>
-                                                <option value="Jaipur">Jaipur</option>
-                                                <option value="Lucknow">Lucknow</option>
-                                                <option value="Chandigarh">Chandigarh</option>
-                                                <option value="Kochi">Kochi</option>
-                                                <option value="Coimbatore">Coimbatore</option>
-                                                <option value="Indore">Indore</option>
-                                                <option value="Bhopal">Bhopal</option>
-                                                <option value="Nagpur">Nagpur</option>
-                                                <option value="Surat">Surat</option>
-                                                <option value="Vadodara">Vadodara</option>
-                                                <option value="Visakhapatnam">Visakhapatnam</option>
-                                                <option value="Bhubaneswar">Bhubaneswar</option>
-                                                <option value="Patna">Patna</option>
-                                                <option value="Ranchi">Ranchi</option>
-                                                <option value="Guwahati">Guwahati</option>
-                                                <option value="Dehradun">Dehradun</option>
-                                                <option value="Srinagar">Srinagar</option>
-                                                <option value="Amritsar">Amritsar</option>
-                                                <option value="Goa">Goa</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Iraq" selected>Iraq</option>
+                                                <option value="Nigeria">Nigeria</option>
+                                                <option value="Oman">Oman</option>
+                                                <option value="Uzbekistan">Uzbekistan</option>
                                             </select>
                                         </div>
                                     </div>
@@ -330,14 +299,14 @@
                                             <label class="block font-label-md text-label-md text-on-surface mb-1" for="patient-phone">WhatsApp / Phone</label>
                                             <div class="flex gap-2">
                                                 <select id="country-code-display" aria-label="Country calling code" class="w-[112px] shrink-0 px-2 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm outline-none" tabindex="-1" disabled>
-                                                    <option value="+91" selected>IN +91</option>
-                                                    <option value="+90">TR +90</option>
-                                                    <option value="+66">TH +66</option>
-                                                    <option value="+49">DE +49</option>
-                                                    <option value="+971">UAE +971</option>
+                                                    <option value="+254" selected>KEN +254</option>
+                                                    <option value="+964">IRQ +964</option>
+                                                    <option value="+234">NGA +234</option>
+                                                    <option value="+968">OMA +968</option>
+                                                    <option value="+998">UZB +998</option>
                                                 </select>
-                                                <input type="hidden" id="country-code-value" name="country_code" value="+91" />
-                                                <input id="patient-phone" class="min-w-0 w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all" name="phone" placeholder="98765 43210" autocomplete="tel-national" inputmode="tel" pattern="[0-9\(\)+.\-\s]{7,20}" title="Enter a valid phone number" required type="tel" />
+                                                <input type="hidden" id="country-code-value" name="country_code" value="+964" />
+                                                <input id="patient-phone" class="min-w-0 w-full px-space-md py-2.5 rounded-lg bg-surface-container-lowest text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-high transition-all" name="phone" placeholder="Enter phone number" autocomplete="tel-national" inputmode="tel" pattern="[0-9\(\)+.\-\s]{7,20}" title="Enter a valid phone number" required type="tel" />
                                             </div>
                                         </div>
                                     </div>
@@ -1007,11 +976,11 @@
                             </div>
                         </div>
                         <div class="lg:col-span-6 lg:order-1 lg:sticky lg:top-24 lg:self-start">
-                            <div class="relative bg-surface-container rounded-2xl p-space-md overflow-hidden shadow-xl">
-                                <div class="relative h-96 lg:h-[calc(100vh-8rem)] w-full rounded-xl overflow-hidden">
+                            <div class="relative bg-surface-container rounded-2xl p-space-sm overflow-hidden shadow-xl">
+                                <div class="relative lg:h-[calc(100vh-0rem)] w-full rounded-xl overflow-hidden">
                                     <img class="w-full h-full object-cover"
                                         data-alt="Bright, modern hospital interior with clean clinical architecture and advanced patient care facilities."
-                                        src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" />
+                                        src="./assets/image2.png" />
                                     <!-- Floating Glass Overlay Info Pill -->
                                    
                                 </div>
@@ -1199,76 +1168,25 @@
         <script>
             const quoteForm = document.getElementById('hero-quote-form');
             if (quoteForm) {
-                const phoneInput = document.getElementById('patient-phone');
                 const countryCodeInput = quoteForm.elements.country_code;
                 const countryCodeDisplay = document.getElementById('country-code-display');
                 const countryField = document.getElementById('patient-country');
-                const cityField = document.getElementById('patient-city-field');
-                const cityInput = document.getElementById('patient-city');
                 const submitButton = document.getElementById('quote-submit-button');
                 const successBanner = document.getElementById('quote-success-banner');
                 const errorBanner = document.getElementById('quote-error-banner');
 
                 const countryOptions = [
-                    ['Afghanistan', '+93'], ['Albania', '+355'], ['Algeria', '+213'], ['Andorra', '+376'],
-                    ['Angola', '+244'], ['Antigua and Barbuda', '+1'], ['Argentina', '+54'], ['Armenia', '+374'],
-                    ['Australia', '+61'], ['Austria', '+43'], ['Azerbaijan', '+994'], ['Bahamas', '+1'],
-                    ['Bahrain', '+973'], ['Bangladesh', '+880'], ['Barbados', '+1'], ['Belarus', '+375'],
-                    ['Belgium', '+32'], ['Belize', '+501'], ['Benin', '+229'], ['Bhutan', '+975'],
-                    ['Bolivia', '+591'], ['Bosnia and Herzegovina', '+387'], ['Botswana', '+267'], ['Brazil', '+55'],
-                    ['Brunei', '+673'], ['Bulgaria', '+359'], ['Burkina Faso', '+226'], ['Burundi', '+257'],
-                    ['Cabo Verde', '+238'], ['Cambodia', '+855'], ['Cameroon', '+237'], ['Canada', '+1'],
-                    ['Central African Republic', '+236'], ['Chad', '+235'], ['Chile', '+56'], ['China', '+86'],
-                    ['Colombia', '+57'], ['Comoros', '+269'], ['Congo', '+242'], ['Costa Rica', '+506'],
-                    ['Croatia', '+385'], ['Cuba', '+53'], ['Cyprus', '+357'], ['Czechia', '+420'],
-                    ['Democratic Republic of the Congo', '+243'], ['Denmark', '+45'], ['Djibouti', '+253'],
-                    ['Dominica', '+1'], ['Dominican Republic', '+1'], ['Ecuador', '+593'], ['Egypt', '+20'],
-                    ['El Salvador', '+503'], ['Equatorial Guinea', '+240'], ['Eritrea', '+291'], ['Estonia', '+372'],
-                    ['Eswatini', '+268'], ['Ethiopia', '+251'], ['Fiji', '+679'], ['Finland', '+358'],
-                    ['France', '+33'], ['Gabon', '+241'], ['Gambia', '+220'], ['Georgia', '+995'],
-                    ['Germany', '+49'], ['Ghana', '+233'], ['Greece', '+30'], ['Grenada', '+1'],
-                    ['Guatemala', '+502'], ['Guinea', '+224'], ['Guinea-Bissau', '+245'], ['Guyana', '+592'],
-                    ['Haiti', '+509'], ['Honduras', '+504'], ['Hungary', '+36'], ['Iceland', '+354'],
-                    ['India', '+91'], ['Indonesia', '+62'], ['Iran', '+98'], ['Iraq', '+964'], ['Ireland', '+353'],
-                    ['Israel', '+972'], ['Italy', '+39'], ['Jamaica', '+1'], ['Japan', '+81'], ['Jordan', '+962'],
-                    ['Kazakhstan', '+7'], ['Kenya', '+254'], ['Kiribati', '+686'], ['Kuwait', '+965'],
-                    ['Kyrgyzstan', '+996'], ['Laos', '+856'], ['Latvia', '+371'], ['Lebanon', '+961'],
-                    ['Lesotho', '+266'], ['Liberia', '+231'], ['Libya', '+218'], ['Liechtenstein', '+423'],
-                    ['Lithuania', '+370'], ['Luxembourg', '+352'], ['Madagascar', '+261'], ['Malawi', '+265'],
-                    ['Malaysia', '+60'], ['Maldives', '+960'], ['Mali', '+223'], ['Malta', '+356'],
-                    ['Marshall Islands', '+692'], ['Mauritania', '+222'], ['Mauritius', '+230'], ['Mexico', '+52'],
-                    ['Micronesia', '+691'], ['Moldova', '+373'], ['Monaco', '+377'], ['Mongolia', '+976'],
-                    ['Montenegro', '+382'], ['Morocco', '+212'], ['Mozambique', '+258'], ['Myanmar', '+95'],
-                    ['Namibia', '+264'], ['Nauru', '+674'], ['Nepal', '+977'], ['Netherlands', '+31'],
-                    ['New Zealand', '+64'], ['Nicaragua', '+505'], ['Niger', '+227'], ['Nigeria', '+234'],
-                    ['North Korea', '+850'], ['North Macedonia', '+389'], ['Norway', '+47'], ['Oman', '+968'],
-                    ['Pakistan', '+92'], ['Palau', '+680'], ['Palestine', '+970'], ['Panama', '+507'],
-                    ['Papua New Guinea', '+675'], ['Paraguay', '+595'], ['Peru', '+51'], ['Philippines', '+63'],
-                    ['Poland', '+48'], ['Portugal', '+351'], ['Qatar', '+974'], ['Romania', '+40'],
-                    ['Russia', '+7'], ['Rwanda', '+250'], ['Saint Kitts and Nevis', '+1'], ['Saint Lucia', '+1'],
-                    ['Saint Vincent and the Grenadines', '+1'], ['Samoa', '+685'], ['San Marino', '+378'],
-                    ['Sao Tome and Principe', '+239'], ['Saudi Arabia', '+966'], ['Senegal', '+221'],
-                    ['Serbia', '+381'], ['Seychelles', '+248'], ['Sierra Leone', '+232'], ['Singapore', '+65'],
-                    ['Slovakia', '+421'], ['Slovenia', '+386'], ['Solomon Islands', '+677'], ['Somalia', '+252'],
-                    ['South Africa', '+27'], ['South Korea', '+82'], ['South Sudan', '+211'], ['Spain', '+34'],
-                    ['Sri Lanka', '+94'], ['Sudan', '+249'], ['Suriname', '+597'], ['Sweden', '+46'],
-                    ['Switzerland', '+41'], ['Syria', '+963'], ['Tajikistan', '+992'], ['Tanzania', '+255'],
-                    ['Thailand', '+66'], ['Timor-Leste', '+670'], ['Togo', '+228'], ['Tonga', '+676'],
-                    ['Trinidad and Tobago', '+1'], ['Tunisia', '+216'], ['Turkey', '+90'], ['Turkmenistan', '+993'],
-                    ['Tuvalu', '+688'], ['Uganda', '+256'], ['Ukraine', '+380'], ['United Arab Emirates', '+971'],
-                    ['United Kingdom', '+44'], ['United States', '+1'], ['Uruguay', '+598'], ['Uzbekistan', '+998'],
-                    ['Vanuatu', '+678'], ['Vatican City', '+39'], ['Venezuela', '+58'], ['Vietnam', '+84'],
-                    ['Yemen', '+967'], ['Zambia', '+260'], ['Zimbabwe', '+263']
+                    ['Kenya', '+254'], ['Iraq', '+964'],  ['Nigeria', '+234'], ['Oman', '+968'], ['Uzbekistan', '+998']
                 ];
                 const countryCodes = Object.fromEntries(countryOptions);
                 countryField.replaceChildren(...countryOptions.map(([country]) => {
                     const option = document.createElement('option');
                     option.value = country;
                     option.textContent = country;
-                    option.selected = country === 'India';
+                    option.selected = country === 'Kenya';
                     return option;
                 }));
-                countryField.value = 'India';
+                countryField.value = 'Kenya';
                 countryCodeDisplay.replaceChildren(...countryOptions
                     .filter(([, code], index, countries) => countries.findIndex(([, value]) => value === code) === index)
                     .map(([country, code]) => {
@@ -1278,35 +1196,17 @@
                         return option;
                     }));
 
-                function updateCountryFields() {
-                    const isIndia = countryField.value === 'India';
-                    const countryCode = countryCodes[countryField.value] || '+91';
-
+                function updateCountryCallingCode() {
+                    const countryCode = countryCodes[countryField.value];
                     countryCodeDisplay.value = countryCode;
                     countryCodeInput.value = countryCode;
-                    cityField.classList.toggle('hidden', !isIndia);
-                    cityInput.required = isIndia;
-                    if (!isIndia) cityInput.value = '';
                 }
 
-                function validatePatientPhone() {
-                    const phoneDigits = phoneInput.value.replace(/\D/g, '');
-                    const isIndianNumber = countryCodeInput.value === '+91';
-                    phoneInput.setCustomValidity(isIndianNumber && phoneDigits.length !== 10
-                        ? 'Enter a valid 10-digit Indian mobile number.'
-                        : '');
-                }
-
-                phoneInput.addEventListener('input', validatePatientPhone);
-                countryField.addEventListener('change', () => {
-                    updateCountryFields();
-                    validatePatientPhone();
-                });
-                updateCountryFields();
+                countryField.addEventListener('change', updateCountryCallingCode);
+                updateCountryCallingCode();
 
                 quoteForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
-                    validatePatientPhone();
                     successBanner.classList.add('hidden');
                     errorBanner.classList.add('hidden');
                     if (!quoteForm.reportValidity()) return;
@@ -1334,7 +1234,7 @@
                         }
                         successBanner.classList.remove('hidden');
                         quoteForm.reset();
-                        updateCountryFields();
+                        updateCountryCallingCode();
                     } catch (error) {
                         errorBanner.textContent = error.message || 'We could not send your request. Please try again.';
                         errorBanner.classList.remove('hidden');
