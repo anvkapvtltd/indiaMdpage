@@ -256,6 +256,24 @@
                                     </p>
                                 </div>
                             </div>
+                            <button id="hero-prev" type="button" aria-label="Previous slide"
+                                class="absolute left-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm transition hover:bg-black/65 focus:outline-none focus:ring-2 focus:ring-white">
+                                <span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+                            </button>
+                            <button id="hero-next" type="button" aria-label="Next slide"
+                                class="absolute right-3 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm transition hover:bg-black/65 focus:outline-none focus:ring-2 focus:ring-white">
+                                <span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+                            </button>
+                            <div class="absolute bottom-4 right-4 z-20 flex items-center gap-3 rounded-full bg-black/45 px-3 py-2 backdrop-blur-sm">
+                                <div id="hero-slide-dots" class="flex items-center gap-2" role="group" aria-label="Choose a slide">
+                                    <button type="button" class="hero-slide-dot h-2.5 w-2.5 rounded-full bg-white" aria-label="Show slide 1" aria-current="true"></button>
+                                    <button type="button" class="hero-slide-dot h-2.5 w-2.5 rounded-full bg-white/50" aria-label="Show slide 2" aria-current="false"></button>
+                                </div>
+                                <button id="hero-toggle-autoplay" type="button" aria-label="Pause slideshow" aria-pressed="false"
+                                    class="flex h-7 w-7 items-center justify-center text-white focus:outline-none focus:ring-2 focus:ring-white rounded-full">
+                                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">pause</span>
+                                </button>
+                            </div>
                         </div>
                         <!-- Consultation form -->
                         <div class="lg:col-span-5 w-full" id="free-medical-opinion">
@@ -528,12 +546,12 @@
                                     <img class="w-full h-full object-cover"
                                         data-alt="Chung-Ang University Hospital in Seoul, modern glass medical skyscraper architectural exterior with manicured gardens and international patient welcome pavilion."
                                         src="./assets/akash_hospital.webp" />
-                                    <!-- <span
-                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
+                                    <span
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">NABL-
                                         Accredited</span>
                                     <span
                                         class="absolute top-3 right-3 bg-surface/90 backdrop-blur-md text-primary font-label-md text-label-md px-2 py-0.5 rounded-full font-bold">900+
-                                        Beds</span> -->
+                                        Beds</span>
                                 </div>
                                 <div class="p-space-lg">
                                     <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Aakash Healthcare, Delhi</h3>
@@ -586,7 +604,7 @@
                                         src="./assets/Artemis-Hospital-Gurgaon.webp" />
                                     <span
                                         class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
-                                        &amp; NABH-accredited </span>
+                                        &amp; NABH-Accredited </span>
                                    
                                 </div>
                                 <div class="p-space-lg">
@@ -640,7 +658,7 @@
                                         data-alt="Fortis Memorial Research Institute, Gurugram, advanced tertiary care hospital and research facility."
                                         src="./assets//fortis-hospital-gurugram.jpg.webp" />
                                     <span
-                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI &amp; NABH-accredited</span>
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI &amp; NABH-Accredited</span>
                                    
                                 </div>
                                 <div class="p-space-lg">
@@ -695,7 +713,7 @@
                                         src="./assets//Max-Super-Speciality-Hospital-Saket.avif" />
                                     <span
                                         class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
-                                        &amp; NABH Accredited</span>
+                                        &amp; NABH-Accredited</span>
                                 </div>
                                 <div class="p-space-lg">
                                     <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Max Super Speciality
@@ -741,7 +759,7 @@
                                         src="./assets/Indraprastha_Apollo_Hospitals.jpg" />
                                     <span
                                         class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">JCI
-                                        &amp; NABH Accredited</span>
+                                        &amp; NABH-Accredited</span>
                                 </div>
                                 <div class="p-space-lg">
                                     <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Indraprastha Apollo
@@ -785,9 +803,8 @@
                                     <img class="w-full h-full object-cover"
                                         data-alt="Centre for Sight, Delhi, specialist eye hospital providing advanced vision and retinal care."
                                         src="./assets/CFS-ASHOK-VIHAR-1.webp" />
-                                    <!-- <span
-                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">Specialist
-                                        Eye Care</span> -->
+                                    <span
+                                        class="absolute top-3 left-3 bg-primary text-on-primary font-label-sm text-label-sm px-2.5 py-1 rounded-full font-bold">NABH-Accredited</span>
                                 </div>
                                 <div class="p-space-lg">
                                     <h3 class="font-headline-sm text-headline-sm font-bold text-primary mb-1">Centre for Sight,
@@ -1192,23 +1209,68 @@
             const heroSlides = document.querySelectorAll('#hero-slider .hero-slide');
             if (heroSlides.length > 1) {
                 let activeHeroSlide = 0;
-                window.setInterval(() => {
-                    const currentSlide = heroSlides[activeHeroSlide];
-                    const nextIndex = (activeHeroSlide + 1) % heroSlides.length;
-                    const nextSlide = heroSlides[nextIndex];
+                let autoplayPaused = false;
+                const heroDots = document.querySelectorAll('.hero-slide-dot');
+                const autoplayToggle = document.getElementById('hero-toggle-autoplay');
 
-                    currentSlide.classList.replace('translate-x-0', '-translate-x-full');
+                function showHeroSlide(nextIndex, direction = 1) {
+                    if (nextIndex === activeHeroSlide) return;
+
+                    const currentSlide = heroSlides[activeHeroSlide];
+                    const nextSlide = heroSlides[nextIndex];
+                    const incomingPosition = direction > 0 ? 'translate-x-full' : '-translate-x-full';
+                    const outgoingPosition = direction > 0 ? '-translate-x-full' : 'translate-x-full';
+
+                    currentSlide.classList.replace('translate-x-0', outgoingPosition);
                     currentSlide.setAttribute('aria-hidden', 'true');
-                    if (nextSlide.classList.contains('-translate-x-full')) {
-                        nextSlide.style.transition = 'none';
-                        nextSlide.classList.replace('-translate-x-full', 'translate-x-full');
-                        void nextSlide.offsetWidth;
-                        nextSlide.style.removeProperty('transition');
-                    }
-                    nextSlide.classList.replace('translate-x-full', 'translate-x-0');
+                    nextSlide.style.transition = 'none';
+                    nextSlide.classList.remove('translate-x-0', 'translate-x-full', '-translate-x-full');
+                    nextSlide.classList.add(incomingPosition);
+                    void nextSlide.offsetWidth;
+                    nextSlide.style.removeProperty('transition');
+                    nextSlide.classList.replace(incomingPosition, 'translate-x-0');
                     nextSlide.setAttribute('aria-hidden', 'false');
                     activeHeroSlide = nextIndex;
-                }, 5000);
+                    heroDots.forEach((dot, index) => {
+                        dot.setAttribute('aria-current', String(index === activeHeroSlide));
+                        dot.classList.toggle('bg-white', index === activeHeroSlide);
+                        dot.classList.toggle('bg-white/50', index !== activeHeroSlide);
+                    });
+                }
+
+                function pauseAutoplay() {
+                    autoplayPaused = true;
+                    autoplayToggle.setAttribute('aria-label', 'Resume slideshow');
+                    autoplayToggle.setAttribute('aria-pressed', 'true');
+                    autoplayToggle.querySelector('span').textContent = 'play_arrow';
+                }
+
+                document.getElementById('hero-prev').addEventListener('click', () => {
+                    // pauseAutoplay();
+                    showHeroSlide((activeHeroSlide - 1 + heroSlides.length) % heroSlides.length, -1);
+                });
+                document.getElementById('hero-next').addEventListener('click', () => {
+                    // pauseAutoplay();
+                    showHeroSlide((activeHeroSlide + 1) % heroSlides.length);
+                });
+                heroDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        pauseAutoplay();
+                        showHeroSlide(index, index > activeHeroSlide ? 1 : -1);
+                    });
+                });
+                autoplayToggle.addEventListener('click', () => {
+                    autoplayPaused = !autoplayPaused;
+                    autoplayToggle.setAttribute('aria-label', autoplayPaused ? 'Resume slideshow' : 'Pause slideshow');
+                    autoplayToggle.setAttribute('aria-pressed', String(autoplayPaused));
+                    autoplayToggle.querySelector('span').textContent = autoplayPaused ? 'play_arrow' : 'pause';
+                });
+
+                window.setInterval(() => {
+                    if (!autoplayPaused) {
+                        showHeroSlide((activeHeroSlide + 1) % heroSlides.length);
+                    }
+                }, 3000);
             }
 
             const quoteForm = document.getElementById('hero-quote-form');
