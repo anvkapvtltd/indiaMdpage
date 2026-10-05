@@ -295,11 +295,10 @@
                                         <span class="material-symbols-outlined text-[20px]">medical_services</span>
                                     </div>
                                 </div>
-                                <form class="space-y-space-sm" id="hero-quote-form" action="https://formsubmit.co/reachus@indiamd.ai" method="POST">
+                                <form class="space-y-space-sm" id="hero-quote-form" action="https://formsubmit.co/reachus@indiamd.ai" method="POST" target="formsubmit-response-frame">
                                     <input type="hidden" name="_subject" value="New IndiaMD medical opinion request" />
                                     <input type="hidden" name="_template" value="table" />
                                     <input type="hidden" name="_autoresponse" id="quote-autoresponse" />
-                                    <input type="hidden" name="_next" id="quote-return-url" />
                                     <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
                                     <div>
                                         <label class="block font-label-md text-label-md text-on-surface mb-1">Full
@@ -389,6 +388,7 @@
                                         <span class="shrink-0">• Response &lt; 4 Hours</span>
                                     </div>
                                 </form>
+                                <iframe id="formsubmit-response-frame" name="formsubmit-response-frame" title="Form submission response" class="hidden" aria-hidden="true" tabindex="-1"></iframe>
                             </div>
                         </div>
                     </div>
@@ -1283,14 +1283,20 @@
                 const successBanner = document.getElementById('quote-success-banner');
                 const errorBanner = document.getElementById('quote-error-banner');
                 const autoresponseField = document.getElementById('quote-autoresponse');
-                const returnUrlField = document.getElementById('quote-return-url');
+                const responseFrame = document.getElementById('formsubmit-response-frame');
+                let submissionPending = false;
 
-                const pageUrl = new URL(window.location.href);
-                if (pageUrl.searchParams.get('form') === 'received') {
+                responseFrame.addEventListener('load', () => {
+                    if (!submissionPending) return;
+
+                    submissionPending = false;
                     successBanner.classList.remove('hidden');
-                    pageUrl.searchParams.delete('form');
-                    window.history.replaceState({}, '', pageUrl);
-                }
+                    quoteForm.reset();
+                    updateCountryCallingCode();
+                    submitButton.disabled = false;
+                    submitButton.removeAttribute('aria-busy');
+                    quoteForm.removeAttribute('aria-busy');
+                });
 
                 const countryOptions = [
                     ['Kenya', '+254'], ['Iraq', '+964'],  ['Nigeria', '+234'], ['Oman', '+968'], ['Uzbekistan', '+998']
@@ -1344,14 +1350,7 @@
                         'Team IndiaMD'
                     ].join('\n');
 
-                    const returnUrl = new URL(window.location.href);
-                    returnUrl.searchParams.set('form', 'received');
-                    if (returnUrl.protocol === 'http:' || returnUrl.protocol === 'https:') {
-                        returnUrlField.value = returnUrl.href;
-                    } else {
-                        returnUrlField.disabled = true;
-                    }
-
+                    submissionPending = true;
                     submitButton.disabled = true;
                     submitButton.setAttribute('aria-busy', 'true');
                     quoteForm.setAttribute('aria-busy', 'true');
