@@ -295,10 +295,11 @@
                                         <span class="material-symbols-outlined text-[20px]">medical_services</span>
                                     </div>
                                 </div>
-                                <form class="space-y-space-sm" id="hero-quote-form">
+                                <form class="space-y-space-sm" id="hero-quote-form" action="https://formsubmit.co/reachus@indiamd.ai" method="POST">
                                     <input type="hidden" name="_subject" value="New IndiaMD medical opinion request" />
                                     <input type="hidden" name="_template" value="table" />
-                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_autoresponse" id="quote-autoresponse" />
+                                    <input type="hidden" name="_next" id="quote-return-url" />
                                     <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" />
                                     <div>
                                         <label class="block font-label-md text-label-md text-on-surface mb-1">Full
@@ -374,7 +375,7 @@
                                             class="material-symbols-outlined text-[18px] sm:text-[20px] shrink-0 transition-transform group-hover:translate-x-1">arrow_forward</span>
                                     </button>
                                     <div class="hidden p-space-sm rounded-lg bg-surface-container-high text-primary font-body-sm text-body-sm text-center" id="quote-success-banner" role="status" aria-live="polite">
-                                        Request received. An international patient coordinator will review your case and respond within 4 hours.
+                                        Your request has been received. Our International Patient Coordinator will review your case and get back to you shortly.
                                     </div>
                                     <div class="hidden p-space-sm rounded-lg bg-error-container text-on-error-container font-body-sm text-body-sm text-center" id="quote-error-banner" role="alert" aria-live="assertive">We could not send your request. Please try again or contact us on WhatsApp.</div>
                                     <div
@@ -1281,6 +1282,15 @@
                 const submitButton = document.getElementById('quote-submit-button');
                 const successBanner = document.getElementById('quote-success-banner');
                 const errorBanner = document.getElementById('quote-error-banner');
+                const autoresponseField = document.getElementById('quote-autoresponse');
+                const returnUrlField = document.getElementById('quote-return-url');
+
+                const pageUrl = new URL(window.location.href);
+                if (pageUrl.searchParams.get('form') === 'received') {
+                    successBanner.classList.remove('hidden');
+                    pageUrl.searchParams.delete('form');
+                    window.history.replaceState({}, '', pageUrl);
+                }
 
                 const countryOptions = [
                     ['Kenya', '+254'], ['Iraq', '+964'],  ['Nigeria', '+234'], ['Oman', '+968'], ['Uzbekistan', '+998']
@@ -1312,44 +1322,39 @@
                 countryField.addEventListener('change', updateCountryCallingCode);
                 updateCountryCallingCode();
 
-                quoteForm.addEventListener('submit', async (event) => {
-                    event.preventDefault();
+                quoteForm.addEventListener('submit', () => {
                     successBanner.classList.add('hidden');
                     errorBanner.classList.add('hidden');
-                    if (!quoteForm.reportValidity()) return;
+
+                    const patientName = quoteForm.elements.name.value.trim();
+                    autoresponseField.value = [
+                        `Dear ${patientName},`,
+                        '',
+                        'Thank you for reaching out to IndiaMD.',
+                        '',
+                        'We have successfully received your query submitted through our website. Our team will review your requirements and get in touch with you shortly to guide you through the next steps of your healthcare journey in India.',
+                        '',
+                        'You can also connect with our team directly on WhatsApp for any questions or updates.',
+                        '',
+                        'WhatsApp/Call -> +91 8800 028 648',
+                        '',
+                        'We look forward to assisting you.',
+                        '',
+                        'Warm regards,',
+                        'Team IndiaMD'
+                    ].join('\n');
+
+                    const returnUrl = new URL(window.location.href);
+                    returnUrl.searchParams.set('form', 'received');
+                    if (returnUrl.protocol === 'http:' || returnUrl.protocol === 'https:') {
+                        returnUrlField.value = returnUrl.href;
+                    } else {
+                        returnUrlField.disabled = true;
+                    }
 
                     submitButton.disabled = true;
                     submitButton.setAttribute('aria-busy', 'true');
                     quoteForm.setAttribute('aria-busy', 'true');
-                    try {
-                        const formData = new FormData(quoteForm);
-                        const submission = Object.fromEntries(formData.entries());
-                        submission.phone = `${submission.country_code} ${submission.phone}`;
-                        delete submission.country_code;
-
-                        const response = await fetch('https://formsubmit.co/ajax/reachus@indiamd.ai', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                Accept: 'application/json'
-                            },
-                            body: JSON.stringify(submission)
-                        });
-                        const result = await response.json();
-                        if (!response.ok || (result.success !== 'true' && result.success !== true)) {
-                            throw new Error(result.message || 'Email service did not accept the request.');
-                        }
-                        successBanner.classList.remove('hidden');
-                        quoteForm.reset();
-                        updateCountryCallingCode();
-                    } catch (error) {
-                        errorBanner.textContent = error.message || 'We could not send your request. Please try again.';
-                        errorBanner.classList.remove('hidden');
-                    } finally {
-                        submitButton.disabled = false;
-                        submitButton.removeAttribute('aria-busy');
-                        quoteForm.removeAttribute('aria-busy');
-                    }
                 });
             }
 
